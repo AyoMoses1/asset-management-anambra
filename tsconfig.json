@@ -2,6 +2,15 @@
   "compilerOptions": {
     "target": "ES2020",
     "useDefineForClassFields": true,
+    "baseUrl": "src",
+    "paths": {
+      "assets/*": ["assets/*"],
+      "components/*": ["components/*"],
+      "utils/*": ["utils/*"],
+      "layouts/*": ["layouts/*"],
+      "pages/*": ["pages/*"],
+      "hooks/*": ["hooks/*"]
+    },
     "lib": ["ES2020", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
