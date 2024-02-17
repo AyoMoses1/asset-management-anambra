@@ -28,8 +28,22 @@ const h3Small = () =>
     lineHeight: "31.2px",
   });
 
+const h4 = () =>
+  defineStyle({
+    fontSize: "20px",
+    fontWeight: 700,
+    lineHeight: "26px",
+  });
+
+const h4Small = () =>
+  defineStyle({
+    fontSize: "20px",
+    fontWeight: 600,
+    lineHeight: "26px",
+  });
+
 export const headingTheme = defineStyleConfig({
-  variants: { h1, h2, h3, h3Small },
+  variants: { h1, h2, h3, h4, h3Small, h4Small },
   defaultProps: {
     variant: "h2",
   },

@@ -1,33 +1,26 @@
-import {
-  defineStyle,
-  defineStyleConfig,
-  StyleFunctionProps,
-} from "@chakra-ui/react";
+import { defineStyle, defineStyleConfig } from "@chakra-ui/react";
 
-const primary = (props: StyleFunctionProps) =>
+const small = () =>
   defineStyle({
-    color: props.theme.colors[props.colorMode].textOne.naturalGray,
+    fontSize: "14",
+    lineHeight: "21px",
   });
 
-const neutral = (props: StyleFunctionProps) =>
+const normal = () =>
   defineStyle({
-    color: props.theme.colors.light.textThree.neutralGray,
+    fontSize: "16",
+    lineHeight: "24px",
   });
 
-const sm = defineStyle({
-  fontSize: "14px",
-  lineHeight: "150%"
-});
-
-const md = defineStyle({
-  fontSize: "18px",
-});
+const large = () =>
+  defineStyle({
+    fontSize: "18",
+    lineHeight: "23.4px",
+  });
 
 export const textTheme = defineStyleConfig({
-  variants: { primary, neutral },
-  sizes: { sm, md },
+  variants: { small, normal, large },
   defaultProps: {
-    size: "md",
-    variant: "primary",
+    variant: "normal",
   },
 });

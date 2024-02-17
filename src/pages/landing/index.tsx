@@ -1,7 +1,7 @@
-import { Heading } from "@chakra-ui/react";
+import { Text } from "@chakra-ui/react";
 
 const index = () => {
-  return <Heading variant={"h3"}>index</Heading>;
+  return <Text variant={"large"}>index</Text>;
 };
 
 export default index;
