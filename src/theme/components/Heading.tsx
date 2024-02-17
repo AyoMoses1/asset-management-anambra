@@ -1,33 +1,36 @@
-import {
-  defineStyle,
-  defineStyleConfig,
-  StyleFunctionProps,
-} from "@chakra-ui/react";
+import { defineStyle, defineStyleConfig } from "@chakra-ui/react";
 
-const outline = defineStyle({
-  border: "2px dashed", // change the appearance of the border
-  borderRadius: 0, // remove the border radius
-  fontWeight: "semibold", // change the font weight
-});
-
-const brandPrimary = (props: StyleFunctionProps) =>
+const h1 = () =>
   defineStyle({
-    color: props.theme.colors[props.colorMode].black,
+    fontSize: "42px",
+    fontWeight: 700,
+    lineHeight: "54.6px",
   });
 
-const md = defineStyle({
-  fontSize: "32px",
-  fontWeight: 700,
-  lineHeight: "110%",
-  // h: "16",
-  borderRadius: "md",
-});
+const h2 = () =>
+  defineStyle({
+    fontSize: "32px",
+    fontWeight: 700,
+    lineHeight: "41.6px",
+  });
+
+const h3 = () =>
+  defineStyle({
+    fontSize: "24px",
+    fontWeight: 700,
+    lineHeight: "31.2px",
+  });
+
+const h3Small = () =>
+  defineStyle({
+    fontSize: "24px",
+    fontWeight: 600,
+    lineHeight: "31.2px",
+  });
 
 export const headingTheme = defineStyleConfig({
-  variants: { outline, brandPrimary },
-  sizes: { md },
+  variants: { h1, h2, h3, h3Small },
   defaultProps: {
-    size: "md",
-    variant: "brandPrimary",
+    variant: "h2",
   },
 });
