@@ -18,8 +18,14 @@ const large = () =>
     lineHeight: "23.4px",
   });
 
+const xl = () =>
+  defineStyle({
+    fontSize: "20",
+    lineHeight: "30px",
+  });
+
 export const textTheme = defineStyleConfig({
-  variants: { small, normal, large },
+  variants: { small, normal, large, xl },
   defaultProps: {
     variant: "normal",
   },

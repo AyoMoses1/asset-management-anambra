@@ -1,7 +1,13 @@
-import { Text } from "@chakra-ui/react";
+import Hero from "components/landing/Hero";
+import Niche from "components/landing/Niche";
 
 const index = () => {
-  return <Text variant={"large"}>index</Text>;
+  return (
+    <>
+      <Hero />
+      <Niche />
+    </>
+  );
 };
 
 export default index;

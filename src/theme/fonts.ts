@@ -1,7 +1,7 @@
 export default {
   fonts: {
-    heading: `'Poppins', sans-serif'`,
-    body: `'Poppins', sans-serif'`,
-    rubik: `'Rubik Variable', 'sans-serif'`,
+    heading: `'IBM Plex Sans', sans'`,
+    body: `'IBM Plex Sans', sans'`,
+    rubik: `'IBM Plex Sans', 'sans'`,
   },
 };

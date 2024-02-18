@@ -4,48 +4,62 @@ import {
   StyleFunctionProps,
 } from "@chakra-ui/react";
 
-const outline = defineStyle({
-  border: "2px dashed", // change the appearance of the border
-  borderRadius: 0, // remove the border radius
-  fontWeight: "semibold", // change the font weight
-});
-
-const noBorder = defineStyle({
-  border: "none",
-  borderRadius: 0, // remove the border radius
-  fontWeight: "semibold", // change the font weight
-});
-
-const brandPrimary = (props: StyleFunctionProps) =>
+const primary = (props: StyleFunctionProps) =>
   defineStyle({
-    background: props.theme.colors[props.colorMode].base.blue,
-    color: props.theme.colors.white,
-    borderRadius: 4,
+    background: props.theme.colors.main.yellow,
+    color: props.theme.colors.main.black,
+    borderRadius: 5,
     _hover: {
-      background: props.theme.colors.light.hover.blue,
+      background: props.theme.colors.main.blue,
+      color: props.theme.colors.tint.blue,
     },
   });
 
-const xl = defineStyle({
-  fontSize: 16,
-  width: 3270
-});
+const secondary = (props: StyleFunctionProps) =>
+  defineStyle({
+    background: props.theme.colors.main.red,
+    color: props.theme.colors.others.white,
+    borderRadius: 5,
+    _hover: {
+      background: props.theme.colors.main.blue,
+      color: props.theme.colors.tint.blue,
+    },
+  });
 
-const lg = defineStyle({
-  fontSize: 16,
-  width: 327
-});
+const tertiary = (props: StyleFunctionProps) =>
+  defineStyle({
+    background: props.theme.colors.main.black,
+    color: props.theme.colors.others.white,
+    borderRadius: 4,
+    _hover: {
+      background: props.theme.colors.main.blue,
+      color: props.theme.colors.tint.blue,
+    },
+  });
+
+const grey = (props: StyleFunctionProps) =>
+  defineStyle({
+    background: props.theme.colors.tint.grey,
+    color: props.theme.colors.others.white,
+    borderRadius: 4,
+    _hover: {
+      background: props.theme.colors.main.blue,
+      color: props.theme.colors.tint.blue,
+    },
+  });
 
 const md = defineStyle({
-  fontSize: 16,
-  width: "100%",
+  padding: "8px 16px 8px 16px",
+  fontSize: 14,
+  fontWeight: 500,
+  lineHeight: "21px",
 });
 
 export const buttonTheme = defineStyleConfig({
-  variants: { outline, brandPrimary, noBorder },
-  sizes: { xl, lg, md },
+  variants: { primary, secondary, tertiary, grey },
+  sizes: { md },
   defaultProps: {
     size: "md",
-    variant: "brandPrimary",
+    variant: "primary",
   },
 });
