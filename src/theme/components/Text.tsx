@@ -1,5 +1,10 @@
 import { defineStyle, defineStyleConfig } from "@chakra-ui/react";
 
+const xs = () =>
+  defineStyle({
+    fontSize: "12",
+    lineHeight: "18px",
+  });
 const small = () =>
   defineStyle({
     fontSize: "14",
@@ -25,7 +30,7 @@ const xl = () =>
   });
 
 export const textTheme = defineStyleConfig({
-  variants: { small, normal, large, xl },
+  variants: { xs, small, normal, large, xl },
   defaultProps: {
     variant: "normal",
   },

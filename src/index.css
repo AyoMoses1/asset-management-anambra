@@ -3,3 +3,18 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.gradient-text-two {
+  background: linear-gradient(275.42deg, #ffd338 3.31%, #ffffff 116.11%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-two::before {
+  content: ""; /* Create a pseudo-element */
+  position: absolute; /* Position it absolutely */
+  left: 50%;
+  transform: translate(-50%, -50%); /* Center it */
+  border-radius: 50%;
+  box-shadow: 0 0 500px 100px rgba(255, 211, 56, 0.7);
+}
