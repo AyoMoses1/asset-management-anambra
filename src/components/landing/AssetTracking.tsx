@@ -28,8 +28,8 @@ const AssetTracking = () => {
           and streamline operations.
         </Text>
         <Flex columnGap={"16px"}>
-          {trackData.map((item) => (
-            <TrackCard item={item} />
+          {trackData.map((item, idx) => (
+            <TrackCard key={idx} item={item} />
           ))}
         </Flex>
       </Box>
@@ -53,8 +53,8 @@ const AssetTracking = () => {
           detail where necessary
         </Text>
         <Flex columnGap={"16px"}>
-          {trackData.map((item) => (
-            <TrackCard item={item} />
+          {trackData.map((item, idx) => (
+            <TrackCard item={item} key={idx} />
           ))}
         </Flex>
       </Box>
@@ -73,8 +73,8 @@ const AssetTracking = () => {
           reckless spending.
         </Text>
         <Flex columnGap={"16px"}>
-          {trackData2.map((item) => (
-            <TrackCard item={item} />
+          {trackData2.map((item, idx) => (
+            <TrackCard key={idx} item={item} />
           ))}
         </Flex>
       </Box>

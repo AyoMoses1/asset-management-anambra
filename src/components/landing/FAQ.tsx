@@ -21,8 +21,14 @@ const Faq = () => {
         its features.
       </Text>
       <Accordion w={"100%"}>
-        {faq.map((item) => (
-          <AccordionItem w={"100%"} bg={"#F4F4F4"} mb={"11px"} borderRadius={4}>
+        {faq.map((item, idx) => (
+          <AccordionItem
+            key={idx}
+            w={"100%"}
+            bg={"#F4F4F4"}
+            mb={"11px"}
+            borderRadius={4}
+          >
             <AccordionButton>
               <Heading variant={"h4Small"}>{item.question}</Heading>
               <AccordionIcon ml={"auto"} />

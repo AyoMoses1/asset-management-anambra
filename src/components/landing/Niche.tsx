@@ -16,8 +16,8 @@ const Niche = () => {
         </Text>
       </VStack>
       <SimpleGrid columns={3} spacing={"25px"} mt={"72px"}>
-        {nicheData.map((item) => (
-          <NicheBox item={item} />
+        {nicheData.map((item, idx) => (
+          <NicheBox key={idx} item={item} />
         ))}
       </SimpleGrid>
     </Box>
