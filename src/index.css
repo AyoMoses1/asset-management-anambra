@@ -4,6 +4,38 @@
   -webkit-text-fill-color: transparent;
 }
 
+.gradient-text::before {
+  content: ""; /* Create a pseudo-element */
+  position: absolute; /* Position it absolutely */
+  left: 15%;
+  top: 49%;
+  transform: translate(-50%, -50%) skew(-20deg, 0deg); /* Skew the shape */
+  width: 100px;
+  height: 50px;
+  background: linear-gradient(
+    275.42deg,
+    rgba(255, 211, 56, 0.3) 3.31%,
+    rgba(255, 255, 255, 0.3) 116.11%
+  ); /* Gradient with transparency */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Add a shadow for 3D effect */
+}
+
+.text-grad-hero::before {
+  content: ""; /* Create a pseudo-element */
+  position: absolute; /* Position it absolutely */
+  left: 50%;
+  top: 49%;
+  transform: translate(-50%, -50%) skew(-20deg, 0deg); /* Skew the shape */
+  width: 100px;
+  height: 50px;
+  background: linear-gradient(
+    275.42deg,
+    rgba(234, 184, 5, 0.3) 3.31%,
+    rgba(255, 255, 255, 0.3) 116.11%
+  ); /* Gradient with transparency */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
 .gradient-text-two {
   background: linear-gradient(275.42deg, #ffd338 3.31%, #ffffff 116.11%);
   -webkit-background-clip: text;

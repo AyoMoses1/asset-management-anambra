@@ -7,6 +7,7 @@ import {
   Button,
   HStack,
 } from "@chakra-ui/react";
+import logo from "assets/logo.svg";
 import h1 from "assets/h1.png";
 import h2 from "assets/h2.png";
 import h3 from "assets/h3.png";
@@ -17,7 +18,8 @@ import h7 from "assets/h7.png";
 
 const Hero = () => {
   return (
-    <Box bgColor={"#1E2124"}>
+    <Box bgColor={"#1E2124"} position={"relative"}>
+      <Image src={logo} position={"absolute"} left={"34px"} top={"21px"} />
       <SimpleGrid
         columns={[2]}
         spacing={[10, 10, 20, 0]}
@@ -28,7 +30,7 @@ const Hero = () => {
             <Heading variant={"h1"} mb={[3, 3, 4]} className="gradient-text">
               Empowering the state through effective asset management{" "}
             </Heading>
-            <Text color={"others.white"}>
+            <Text color={"others.white"} className="text-grad-hero" position={"relative"}>
               The Anambra State Asset Management platform provides real-time
               tracking and management solutions to help optimally manage the
               government's resources, promote accountability and streamline
