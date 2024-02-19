@@ -49,8 +49,15 @@ const h5 = () =>
     lineHeight: "19.2px",
   });
 
+const articleHeading = () =>
+  defineStyle({
+    fontSize: "36px",
+    fontWeight: 700,
+    lineHeight: "46.8px",
+  });
+
 export const headingTheme = defineStyleConfig({
-  variants: { h1, h2, h3, h4, h3Small, h4Small, h5 },
+  variants: { h1, h2, h3, h4, h3Small, h4Small, h5, articleHeading },
   defaultProps: {
     variant: "h2",
   },

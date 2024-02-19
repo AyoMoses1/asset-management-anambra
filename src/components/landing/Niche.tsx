@@ -4,14 +4,9 @@ import NicheBox from "./NicheBox";
 
 const Niche = () => {
   return (
-    <Box
-      bg={"main.yellow"}
-      px={"150px"}
-      pt={"131px"}
-      pb={"125px"}
-    >
+    <Box bg={"main.yellow"} px={"150px"} pt={"131px"} pb={"125px"}>
       <VStack maxW={"683px"} mx={"auto"} textAlign={"center"} px={5}>
-        <Heading variant={"h2"} color={"#262725"}>
+        <Heading variant={"articleHeading"} color={"#262725"}>
           Powerful Asset Management Platform by the{" "}
           <span style={{ color: "#fff" }}>Anambra State Govt.</span>
         </Heading>

@@ -16,7 +16,7 @@ const AssetTracking = () => {
     >
       <Box>
         <Heading
-          variant={"h2"}
+          variant={"articleHeading"}
           position={"relative"}
           className="gradient-text-two"
         >
@@ -41,7 +41,7 @@ const AssetTracking = () => {
       </Box>
       <Box>
         <Heading
-          variant={"h2"}
+          variant={"articleHeading"}
           position={"relative"}
           className="gradient-text-two"
         >
@@ -61,7 +61,7 @@ const AssetTracking = () => {
       <Box>
         <Heading
           position={"relative"}
-          variant={"h2"}
+          variant={"articleHeading"}
           className="gradient-text-two"
         >
           Building a More Accountable Government{" "}

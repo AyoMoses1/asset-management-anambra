@@ -40,7 +40,11 @@ const Hero = () => {
               mb={["24px", "40px"]}
             >
               <Button w={["full", "full", "initial"]}>Get started</Button>
-              <Button w={["full", "full", "initial"]} variant={"tertiary"}>
+              <Button
+                w={["full", "full", "initial"]}
+                variant={"tertiary"}
+                bg={"#46443B"}
+              >
                 Learn more
               </Button>
             </HStack>
