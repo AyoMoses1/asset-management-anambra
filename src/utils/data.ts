@@ -5,6 +5,11 @@ import track1 from "assets/majesticons_map-marker-path-line.svg";
 import track2 from "assets/material-symbols_manage-search.svg";
 import track3 from "assets/Vector.svg";
 import track4 from "assets/grommet-icons_compliance.svg";
+import s1 from "assets/Frame 2076.svg"
+import s2 from "assets/Frame 2077.svg"
+import s3 from "assets/Frame 2078.svg"
+import s4 from "assets/Frame 2079.svg"
+
 
 export const nicheData: NicheProps[] = [
   {
@@ -62,5 +67,24 @@ export const faq = [
   {
     question: `How can I join?`,
     answer: `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam hendrerit, justo et commodo tristique, tortor neque aliquam justo, a ultricies ipsum augue vel nisi. Fusce vel metus ac dolor malesuada gravida. Suspendisse potenti. Integer ultricies, libero id aliquam tempor, sem erat vestibulum nibh.`,
+  },
+];
+
+export const socialLinks = [
+  {
+    link: "",
+    icon: s1,
+  },
+  {
+    link: "",
+    icon: s2,
+  },
+  {
+    link: "",
+    icon: s3,
+  },
+  {
+    link: "",
+    icon: s4,
   },
 ];

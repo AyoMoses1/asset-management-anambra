@@ -12,9 +12,11 @@ import { faq } from "utils/data";
 
 const Faq = () => {
   return (
-    <VStack px={"150px"} py={"91px"}>
-      <Heading variant={"articleHeading"}>FAQs</Heading>
-      <Text variant={"xl"}>
+    <VStack px={"150px"} py={"91px"} position={"relative"}>
+      <Heading variant={"articleHeading"} mb={"13px"}>
+        FAQs
+      </Heading>
+      <Text variant={"xl"} mb={"59px"}>
         Find answers to common questions about our ASSET management platform and
         its features.
       </Text>
@@ -31,6 +33,9 @@ const Faq = () => {
           </AccordionItem>
         ))}
       </Accordion>
+      <Text position={"absolute"} color={"#F7C141"} bottom={0}>
+        Governor Chukwuma Soludo is working
+      </Text>
     </VStack>
   );
 };

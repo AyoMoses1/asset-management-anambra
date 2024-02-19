@@ -6,25 +6,27 @@ import {
 
 const primary = (props: StyleFunctionProps) =>
   defineStyle({
-    color: props.theme.colors[props.colorMode].base.blue,
+    color: props.theme.colors.others.white,
+    textDecoration: "underline",
     _hover: {
-      textDecoration: "none"
-    }
+      textDecoration: "none",
+    },
   });
 
 const neutral = (props: StyleFunctionProps) =>
   defineStyle({
-    color: props.theme.colors.light.textThree.neutralGray,
-    
+    color: props.theme.colors.others.white,
   });
 
 const sm = defineStyle({
   fontSize: "14px",
-  lineHeight: "150%"
+  lineHeight: "150%",
 });
 
 const md = defineStyle({
   fontSize: "16px",
+  fontWeight: 400,
+  lineHeight: "19.2px",
 });
 
 export const linkTheme = defineStyleConfig({
