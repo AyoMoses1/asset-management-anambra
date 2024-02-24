@@ -11,18 +11,21 @@ const baseStyle = (props: StyleFunctionProps) =>
   definePartsStyle({
     field: {
       fontFamily: "Poppins", // change the font family
-      color: props.theme.colors[props.colorMode].textThree.neutralGray,
-      border: '1px solid',
-      borderColor: props.theme.colors[props.colorMode].border.neutralGray,
-      background: props.theme.colors[props.colorMode].white,
+      // color: props.theme.colors[props.colorMode].textThree.neutralGray,
+      border: "1px solid",
+      borderColor: props.theme.colors.tint.grey,
+      bg: props.theme.colors.tint.grey,
       height: "45px",
-      _focus: {
-        borderColor: props.theme.colors[props.colorMode].border.neutralGray,
+      _focusVisible: {
+        borderColor: props.theme.colors.tint.grey,
       },
       _placeholder: {
-        color: props.theme.colors[props.colorMode].textThree.neutralGray,
-        fontSize: 16
-      }
+        color: "#C6C6C6",
+        fontSize: 16,
+      },
+      _active: {
+        // background: "red",
+      },
     },
   });
 

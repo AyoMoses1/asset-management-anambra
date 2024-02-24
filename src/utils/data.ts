@@ -5,11 +5,31 @@ import track1 from "assets/majesticons_map-marker-path-line.svg";
 import track2 from "assets/material-symbols_manage-search.svg";
 import track3 from "assets/Vector.svg";
 import track4 from "assets/grommet-icons_compliance.svg";
-import s1 from "assets/Frame 2076.svg"
-import s2 from "assets/Frame 2077.svg"
-import s3 from "assets/Frame 2078.svg"
-import s4 from "assets/Frame 2079.svg"
+import s1 from "assets/Frame 2076.svg";
+import s2 from "assets/Frame 2077.svg";
+import s3 from "assets/Frame 2078.svg";
+import s4 from "assets/Frame 2079.svg";
 
+export const loginInputs = (): AuthInput[] => {
+  return [
+    {
+      name: "username",
+      label: "Username",
+      rule: "Username is required",
+      placeholder: "Enter your username",
+      isRequired: true,
+      type: "email",
+    },
+    {
+      name: "password",
+      label: "Password",
+      rule: "Password must be entered",
+      isRequired: true,
+      type: "password",
+      placeholder: "*********",
+    },
+  ];
+};
 
 export const nicheData: NicheProps[] = [
   {

@@ -2,5 +2,15 @@ type NicheProps = {
   title: string;
   data: string;
   image:  string;
-  //React.FC<React.SVGProps<SVGSVGElement>> |
 }
+
+type AuthInput = {
+  name: string;
+  label: string;
+  rule: string;
+  message?: string;
+  minLength?: number;
+  placeholder?: string;
+  isRequired: boolean;
+  type: string;
+};
