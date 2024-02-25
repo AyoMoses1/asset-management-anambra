@@ -9,6 +9,7 @@ import s1 from "assets/Frame 2076.svg";
 import s2 from "assets/Frame 2077.svg";
 import s3 from "assets/Frame 2078.svg";
 import s4 from "assets/Frame 2079.svg";
+import { IoMdNotifications } from "react-icons/io";
 
 export const loginInputs = (): AuthInput[] => {
   return [
@@ -119,5 +120,18 @@ export const socialLinks = [
   {
     link: "",
     icon: s4,
+  },
+];
+
+export const sidebarContents: SidebarContentType[] = [
+  {
+    name: "dashboard",
+    link: "/dashboard",
+    icon: IoMdNotifications,
+  },
+  {
+    name: "facilities",
+    link: "/dashboard/facilities",
+    icon: IoMdNotifications,
   },
 ];

@@ -14,3 +14,9 @@ type AuthInput = {
   isRequired: boolean;
   type: string;
 };
+
+type SidebarContentType = {
+  name: string;
+  link: string;
+  icon: IconType | string;
+};
