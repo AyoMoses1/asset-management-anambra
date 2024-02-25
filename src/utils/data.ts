@@ -31,6 +31,19 @@ export const loginInputs = (): AuthInput[] => {
   ];
 };
 
+export const forgotPasswordInputs = (): AuthInput[] => {
+  return [
+    {
+      name: "username",
+      label: "Username",
+      rule: "Username is required",
+      placeholder: "Enter your username",
+      isRequired: true,
+      type: "email",
+    },
+  ];
+};
+
 export const nicheData: NicheProps[] = [
   {
     image: allocation,

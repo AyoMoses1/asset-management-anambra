@@ -1,6 +1,7 @@
 import { Navigate } from "react-router-dom";
 import Landing from "pages/landing";
 import Signin from "pages/auth/Signin";
+import ForgotPassword from "pages/auth/ForgotPassword";
 
 export default [
   {
@@ -12,6 +13,11 @@ export default [
     path: "/login",
     element: <Signin />,
     name: "Log In",
+  },
+  {
+    path: "/forgot-password",
+    element: <ForgotPassword />,
+    name: "Forgot Password",
   },
   {
     path: "*",
