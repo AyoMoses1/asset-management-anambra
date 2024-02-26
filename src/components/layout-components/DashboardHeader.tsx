@@ -2,11 +2,13 @@
 import {
   Avatar,
   Box,
+  Icon as ChakraIcon,
   Container,
   HStack,
-  Heading,
-  Icon,
+  InputGroup,
+  InputRightElement,
   IconButton,
+  Input,
   Menu,
   MenuButton,
   MenuItem,
@@ -18,59 +20,34 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import {
+  BORDER_LIGHT,
   DARK,
   LIGHT_GRAY,
   LIGHT_GREEN,
-  TEXT_DARK_GRAY,
   TEXT_GRAY,
-} from "../../utils/color";
-import {
-  useLocation,
-  useNavigate,
-  useParams,
-} from "react-router-dom";
-import { HiOutlineMenuAlt1 } from "react-icons/hi";
-import { decodeSlug } from "utils/helpers";
+  TINT_GREY,
+} from "utils/color";
+import { useNavigate } from "react-router-dom";
 // import { useAppSelector } from "../../store/hook";
 // import { useAppContext } from "../../contexts/AppContext";
 // import LogoutModal from "../modals/LogoutModal";
 import ROUTES from "utils/routeNames";
-import { BsArrowLeft } from "react-icons/bs";
+import { ChevronDownIcon, Search2Icon } from "@chakra-ui/icons";
 
 interface DashboardHeaderProps {
   onOpen: () => void;
 }
 const DashboardHeader: React.FC<DashboardHeaderProps> = ({ onOpen }) => {
-  const { pathname } = useLocation();
-  const isFacility = useParams()?.["name"];
-  const isEditing = useParams()?.["facility"];
-  const name = pathname.split("/").reverse()[0] || "Dashboard";
-  // const user = useAppSelector((state) => state.accountStore.user);
   const { onOpen: openLogoutModal } = useDisclosure();
   const navigate = useNavigate();
-  const isUserManagement = !!useParams()?.["user"];
-  const isRoleManagement = !!useParams()?.["role"];
-  console.log({ isRoleManagement });
-
-  // if (!user || !Object.keys(user).length) {
-  //   logoutAccount();
-  //   return <Navigate to={ROUTES.LOGIN_ROUTE} replace />;
-  // }
-
-  // const fullname = user!.user.firstname + " " + user!.user.lastname;
-  // console.log("USER:", user);
-
-  // const cancelEditing = () => {
-  //   setCurrentFacility(null);
-  //   navigate(ROUTES.FACILITY_ROUTE, { replace: true });
-  // };
+  console.log({ onOpen });
 
   return (
     <Box
       py={3}
       bg={"white"}
-      minH={"90px"}
-      borderBottom={"1px solid " + LIGHT_GRAY}
+      height={"50px"}
+      borderBottom={"1px solid " + BORDER_LIGHT}
     >
       <HStack
         as={Container}
@@ -78,77 +55,36 @@ const DashboardHeader: React.FC<DashboardHeaderProps> = ({ onOpen }) => {
         maxW={"container.xl"}
         spacing={3}
       >
-        <IconButton
-          display={["block", "block", "block", "none"]}
-          variant={"ghost"}
-          onClick={onOpen}
-          aria-label="Menu"
-          icon={<Icon fontSize={"24px"} as={HiOutlineMenuAlt1} />}
-        />
-        <Stack spacing={[1, 1, 2]}>
-          {isFacility ? (
-            <Box h={"4px"} bgColor={DARK} mt={3} w={"25px"} />
-          ) : isEditing ? (
-            <HStack>
-              <IconButton
-                aria-label="back"
-                size={"sm"}
-                variant={"ghost"}
-                // onClick={cancelEditing}
-                icon={
-                  <Icon
-                    as={BsArrowLeft}
-                    fontSize={"xl"}
-                    color={TEXT_DARK_GRAY}
-                  />
-                }
-              />
-              <Heading
-                noOfLines={1}
-                fontSize={["xl", "xl", "2xl"]}
-                color={DARK}
-                textTransform={"uppercase"}
-              >
-                Editing{" "}
-                <span style={{ color: TEXT_GRAY }}>
-                  {" "}
-                  {decodeSlug(isEditing)}
-                </span>{" "}
-              </Heading>
-            </HStack>
-          ) : (
-            <Heading
-              noOfLines={1}
-              fontSize={["xl", "xl", "2xl"]}
-              color={DARK}
-              textTransform={"uppercase"}
-            >
-              {isUserManagement
-                ? "USER MANAGEMENT"
-                : isRoleManagement
-                ? "ROLE MANAGEMENT"
-                : decodeSlug(name)}
-            </Heading>
-          )}
-        </Stack>
-
+        <InputGroup alignItems={"center"} maxWidth={"234px"}>
+          <InputRightElement
+            variant={"link"}
+            as={IconButton}
+            h={"full"}
+            w={12}
+            fontSize={"lg"}
+            bg={TINT_GREY}
+            icon={<ChakraIcon fontSize={"20px"} as={Search2Icon} />}
+          />
+          <Input
+            type={"text"}
+            placeholder="Search by asset tag"
+            bg={"white"}
+            border={`1px solid ${BORDER_LIGHT}`}
+          />
+        </InputGroup>
         <Spacer />
         <Menu>
           <MenuButton>
             <HStack alignItems={"center"}>
-              <Stack
-                spacing={0}
-                textAlign={"right"}
-                display={["none", "none", "flex", "flex"]}
-              >
-                <Heading size="sm" color={DARK} fontFamily={"heading"}>
-                  {"Ayo"}
-                </Heading>
-                <Text fontSize={"sm"} color={TEXT_DARK_GRAY}>
-                  {"ayomoses111@gmail.com"}
-                </Text>
-              </Stack>
-              <Avatar h={"60px"} w={"60px"} name={"Ayo Moses"} />
+              <Avatar
+                h={"24px"}
+                w={"24px"}
+                src={"https://bit.ly/kent-c-dodds"}
+              />
+              <Text size="sm" color={"text.primary"}>
+                Daniel Okafor
+              </Text>
+              <ChevronDownIcon />
             </HStack>
           </MenuButton>
 
