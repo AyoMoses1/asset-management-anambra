@@ -14,8 +14,8 @@ const SideNavigation: React.FC<SideNavigationProps> = ({ onClose }) => {
   return (
     <Flex h={"full"}>
       <Sidebar
-        isSecondaryBarOpen={isOpen}
-        toggleSecondaryBar={onToggle}
+        isOpen={isOpen}
+        toggleBar={onToggle}
         onClose={onClose}
       />
     </Flex>

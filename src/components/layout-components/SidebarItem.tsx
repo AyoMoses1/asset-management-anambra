@@ -1,16 +1,12 @@
-import {
-  Text,
-  Center,
-  Icon,
-  Popover,
-  PopoverTrigger,
-  Portal,
-  PopoverContent,
-  PopoverBody,
-} from "@chakra-ui/react";
+import { Text, Icon, HStack } from "@chakra-ui/react";
 import { IconType } from "react-icons";
-import { useLocation, useParams } from "react-router-dom";
-import { LIGHT_GREEN, TEXT_GRAY } from "utils/color";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
+import {
+  LIGHT_GREEN,
+  MAIN_YELLOW,
+  TEXT_PRIMARY,
+  TEXT_SECONDARY,
+} from "utils/color";
 
 interface SidebarItemProps {
   name: string;
@@ -20,6 +16,11 @@ interface SidebarItemProps {
 const SidebarItem: React.FC<SidebarItemProps> = (item) => {
   const { pathname } = useLocation();
   const param = useParams();
+  const navigate = useNavigate();
+
+  const handleNavigation = (link: string): void => {
+    navigate(link);
+  };
 
   const isActive = param.name
     ? pathname
@@ -35,51 +36,27 @@ const SidebarItem: React.FC<SidebarItemProps> = (item) => {
       (item.name.toLowerCase() === "dashboard" && pathname === "/");
 
   return (
-    <Popover placement="right" strategy="absolute" trigger="hover">
-      <PopoverTrigger>
-        <Text
-          _hover={{ color: !isActive && "brand.500" }}
-          color={isActive ? "white" : TEXT_GRAY}
-        >
-          <Center
-            w={"44px"}
-            rounded={"sm"}
-            h={"44px"}
-            _hover={{ bg: !isActive && LIGHT_GREEN }}
-            bg={
-              isActive
-                ? "linear-gradient(180deg, #26D9A3 0%, #1B9393 100%)"
-                : ""
-            }
-          >
-            {typeof item.icon !== "string" && (
-              <Icon
-                as={item.icon}
-                color={"inherit"}
-                fontSize={"24"}
-              />
-            )}
-          </Center>
-        </Text>
-      </PopoverTrigger>
-      <Portal>
-        <PopoverContent
-          display={["none", "none", "block"]}
-          borderWidth={2}
-          w={"fit-content"}
-          borderColor={"brand.500"}
-          bg={"white"}
-        >
-          <PopoverBody
-            textTransform={"capitalize"}
-            color={TEXT_GRAY}
-            rounded={"sm"}
-          >
-            {item.name}
-          </PopoverBody>
-        </PopoverContent>
-      </Portal>
-    </Popover>
+    <HStack
+      w={"240px"}
+      rounded={"sm"}
+      px={"24px"}
+      py={"12px"}
+      _hover={{ bg: !isActive && LIGHT_GREEN }}
+      color={isActive ? TEXT_PRIMARY : TEXT_SECONDARY}
+      bg={isActive ? MAIN_YELLOW : ""}
+      onClick={() => handleNavigation(item.link)}
+    >
+      {typeof item.icon !== "string" && (
+        <Icon as={item.icon} color={"inherit"} fontSize={"24"} />
+      )}
+      <Text
+        variant={"small"}
+        textTransform={"capitalize"}
+        fontWeight={isActive ? 700 : 400}
+      >
+        {item.name}
+      </Text>
+    </HStack>
   );
 };
 

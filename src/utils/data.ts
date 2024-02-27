@@ -130,8 +130,8 @@ export const sidebarContents: SidebarContentType[] = [
     icon: IoMdNotifications,
   },
   {
-    name: "facilities",
-    link: "/dashboard/facilities",
+    name: "licenses",
+    link: "/dashboard/licenses",
     icon: IoMdNotifications,
   },
 ];

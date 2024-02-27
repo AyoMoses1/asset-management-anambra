@@ -20,6 +20,7 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import {
+  BORDER_DARK,
   BORDER_LIGHT,
   DARK,
   LIGHT_GRAY,
@@ -44,7 +45,7 @@ const DashboardHeader: React.FC<DashboardHeaderProps> = ({ onOpen }) => {
 
   return (
     <Box
-      py={3}
+      py={"5px"}
       bg={"white"}
       height={"50px"}
       borderBottom={"1px solid " + BORDER_LIGHT}
@@ -55,15 +56,15 @@ const DashboardHeader: React.FC<DashboardHeaderProps> = ({ onOpen }) => {
         maxW={"container.xl"}
         spacing={3}
       >
-        <InputGroup alignItems={"center"} maxWidth={"234px"}>
+        <InputGroup alignItems={"center"} maxWidth={"234px"} height={"40px"}>
           <InputRightElement
             variant={"link"}
             as={IconButton}
             h={"full"}
-            w={12}
-            fontSize={"lg"}
+            color={BORDER_DARK}
             bg={TINT_GREY}
-            icon={<ChakraIcon fontSize={"20px"} as={Search2Icon} />}
+            borderRadius={0}
+            icon={<ChakraIcon fontSize={"18px"} as={Search2Icon} />}
           />
           <Input
             type={"text"}

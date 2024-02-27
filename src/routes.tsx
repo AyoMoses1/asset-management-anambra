@@ -25,6 +25,18 @@ export default [
     element: <User />,
     name: "User Panel",
   },
+
+  {
+    path: "/dashboard",
+    element: <User />,
+    name: "User Panel",
+  },
+
+  {
+    path: "/dashboard/licenses",
+    element: <User />,
+    name: "User Panel",
+  },
   {
     path: "*",
     element: <Navigate to={"/login"} replace />,
