@@ -9,7 +9,20 @@ import s1 from "assets/Frame 2076.svg";
 import s2 from "assets/Frame 2077.svg";
 import s3 from "assets/Frame 2078.svg";
 import s4 from "assets/Frame 2079.svg";
-import { IoMdNotifications } from "react-icons/io";
+import {
+  AccessoriesIcon,
+  AssetsIcon,
+  ComponentsIcon,
+  ConsumablesIcon,
+  DashboardIcon,
+  ImportIcon,
+  KitsIcon,
+  LicenseIcon,
+  ReportsIcon,
+  RequestablesIcon,
+  SettingsIcon,
+  UsersIcon,
+} from "icons";
 
 export const loginInputs = (): AuthInput[] => {
   return [
@@ -127,11 +140,61 @@ export const sidebarContents: SidebarContentType[] = [
   {
     name: "dashboard",
     link: "/dashboard",
-    icon: IoMdNotifications,
+    icon: DashboardIcon,
+  },
+  {
+    name: "assets",
+    link: "/dashboard/assets",
+    icon: AssetsIcon,
   },
   {
     name: "licenses",
     link: "/dashboard/licenses",
-    icon: IoMdNotifications,
+    icon: LicenseIcon,
+  },
+  {
+    name: "accessories",
+    link: "/dashboard/accessories",
+    icon: AccessoriesIcon,
+  },
+  {
+    name: "consumables",
+    link: "/dashboard/consumables",
+    icon: ConsumablesIcon,
+  },
+  {
+    name: "components",
+    link: "/dashboard/components",
+    icon: ComponentsIcon,
+  },
+  {
+    name: "predefined kits",
+    link: "/dashboard/predefined-kits",
+    icon: KitsIcon,
+  },
+  {
+    name: "users",
+    link: "/dashboard/users",
+    icon: UsersIcon,
+  },
+  {
+    name: "import",
+    link: "/dashboard/import",
+    icon: ImportIcon,
+  },
+  {
+    name: "settings",
+    link: "/dashboard/settings",
+    icon: SettingsIcon,
+  },
+  {
+    name: "reports",
+    link: "/dashboard/reports",
+    icon: ReportsIcon,
+  },
+  {
+    name: "requestables",
+    link: "/dashboard/requestables",
+    icon: RequestablesIcon,
   },
 ];

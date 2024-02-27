@@ -10,7 +10,7 @@ import React from "react";
 import { sidebarContents } from "utils/data";
 import SidebarItem from "./SidebarItem";
 import logo from "assets/logo3.png";
-import { LIGHT_GRAY} from "../../utils/color";
+import { LIGHT_GRAY } from "../../utils/color";
 import { ChevronLeftIcon, ChevronRightIcon } from "@chakra-ui/icons";
 
 interface SidebarProps {
@@ -47,7 +47,7 @@ const Sidebar: React.FC<SidebarProps> = ({ onClose, toggleBar, isOpen }) => {
           <Center pt={4} display={["flex", "flex", "none"]}>
             <CloseButton size={"lg"} onClick={onClose} />
           </Center>
-          <Stack mt={"20.03px"} flex={1} spacing={2} mx={1}>
+          <Stack mt={"10.03px"} flex={1} spacing={2} mx={1}>
             {sidebarContents.map((item, index) => (
               <SidebarItem key={`sidebar-${item.name}-${index}`} {...item} />
             ))}
