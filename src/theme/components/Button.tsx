@@ -15,6 +15,18 @@ const primary = (props: StyleFunctionProps) =>
     },
   });
 
+const outline = (props: StyleFunctionProps) =>
+  defineStyle({
+    color: props.theme.colors.main.black,
+    border: "1px solid",
+    borderColor: "#CAC5C4",
+    borderRadius: 4,
+    _hover: {
+      background: props.theme.colors.main.blue,
+      color: props.theme.colors.tint.blue,
+    },
+  });
+
 const secondary = (props: StyleFunctionProps) =>
   defineStyle({
     background: props.theme.colors.main.red,
@@ -56,7 +68,7 @@ const md = defineStyle({
 });
 
 export const buttonTheme = defineStyleConfig({
-  variants: { primary, secondary, tertiary, grey },
+  variants: { primary, secondary, tertiary, grey, outline },
   sizes: { md },
   defaultProps: {
     size: "md",
