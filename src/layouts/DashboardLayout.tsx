@@ -1,16 +1,27 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Box, Container, Flex, Stack, useDisclosure } from "@chakra-ui/react";
+import {
+  Box,
+  Container,
+  Flex,
+  Heading,
+  Stack,
+  useDisclosure,
+} from "@chakra-ui/react";
 import React, { ReactNode } from "react";
 import DashboardHeader from "components/layout-components/DashboardHeader";
 import SideNavigation from "components/layout-components/SideNavigation";
 // import { useTheme } from "@emotion/react";
 import { LIGHT_BG } from "utils/color";
+import { useLocation } from "react-router-dom";
+import { decodeSlug } from "utils/helpers";
 
 interface DashboardLayoutProps {
   children: ReactNode;
 }
 const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
   // const data = useTheme();
+  const { pathname } = useLocation();
+  const name = pathname.split("/").reverse()[0] || "Dashboard";
   const { onOpen } = useDisclosure();
 
   // const dispatch = useAppDispatch()
@@ -53,7 +64,8 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
           w={"full"}
           sx={{ overflowX: "hidden" }}
         >
-          <Container maxW={"container.xl"} py={10} w={"full"}>
+          <Container maxW={"container.xl"} py={"30px"} w={"full"}>
+            <Heading variant={"h3Small"}>{decodeSlug(name)}</Heading>
             {children}
           </Container>
         </Box>

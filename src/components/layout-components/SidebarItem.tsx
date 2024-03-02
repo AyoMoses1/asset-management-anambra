@@ -47,7 +47,12 @@ const SidebarItem: React.FC<SidebarItemProps> = (item) => {
       onClick={() => handleNavigation(item.link)}
     >
       {typeof item.icon !== "string" && (
-        <Icon as={item.icon} color={"inherit"} fontSize={"18"} />
+        <Icon
+          as={item.icon}
+          color={"red"}
+          // color={isActive ? "red" : "inherit"}
+          fontSize={"18"}
+        />
       )}
       <Text
         variant={"small"}

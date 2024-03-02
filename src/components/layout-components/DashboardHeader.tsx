@@ -127,6 +127,7 @@ const DashboardHeader: React.FC<DashboardHeaderProps> = ({ onOpen }) => {
         </Menu>
       </HStack>
 
+
       {/* LOGOUT MODAL */}
       {/* <LogoutModal
         isOpen={isOpen}
