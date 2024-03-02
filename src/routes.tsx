@@ -27,7 +27,7 @@ export default [
   },
 
   {
-    path: "/dashboard",
+    path: "/account/view-assets",
     element: <User />,
     name: "User Panel",
   },

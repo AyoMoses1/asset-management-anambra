@@ -1,12 +1,17 @@
+import { Heading, Stack } from "@chakra-ui/react";
+import AlertComponent from "components/common/Alert";
 import DashboardLayout from "layouts/DashboardLayout";
-import React from "react";
 
-const index = () => {
+const Index = () => {
+  const name = "Normal User";
   return (
     <DashboardLayout>
-      <div>index</div>
+      <Stack spacing={"30px"}>
+        <Heading variant={"h3Small"}>Hello, {name}</Heading>
+        <AlertComponent title={"pending items"} />
+      </Stack>
     </DashboardLayout>
   );
 };
 
-export default index;
+export default Index;
