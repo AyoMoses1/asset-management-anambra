@@ -8,6 +8,7 @@ import {
 } from "@chakra-ui/react";
 import { TEXT_PRIMARY, TINT_YELLOW } from "utils/color";
 import Info from "./Info";
+import Assets from "./Assets";
 
 const TabComponent = () => {
   const tabs = ["Info", "Assets", "Licenses", "Accessories", "Consumables"];
@@ -29,7 +30,7 @@ const TabComponent = () => {
           <Info />
         </TabPanel>
         <TabPanel>
-          <p>two!</p>
+          <Assets />
         </TabPanel>
         <TabPanel>
           <p>three!</p>
