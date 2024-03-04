@@ -1,12 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from "react";
 import DataTable, { TableProps } from "react-data-table-component";
-import {
-  DARK,
-  LIGHT_GRAY,
-  LIGHT_GREEN,
-  TEXT_DARK_GRAY,
-} from "../../utils/color";
+import { DARK, TEXT_DARK_GRAY, TEXT_PRIMARY, TINT_GREY } from "utils/color";
 import { CircularProgress, HStack, Text } from "@chakra-ui/react";
 import CustomPagination from "./CustomPagination";
 import EmptyTable from "./EmptyTable";
@@ -17,9 +12,14 @@ const CustomTable: React.FC<CustomTableProps> = (props) => {
     <DataTable
       pagination
       customStyles={{
+        rows: {
+          style: {
+            "&:not(:last-of-type)": { border: 0 },
+          },
+        },
         tableWrapper: {
           style: {
-            background: "#fff",
+            background: "inherit",
           },
         },
         subHeader: {
@@ -29,30 +29,33 @@ const CustomTable: React.FC<CustomTableProps> = (props) => {
         },
         table: {
           style: {
-            border: `1px solid #E2E6EB`,
             borderBottom: 0,
-            marginTop: 16,
+            marginTop: 24,
             borderRadius: 0,
-            color: TEXT_DARK_GRAY,
+            color: "red",
             fontSize: ".9rem",
           },
         },
         headRow: {
           style: {
-            backgroundColor: LIGHT_GREEN,
+            backgroundColor: TINT_GREY,
             borderTopRightRadius: 4,
             borderTopLeftRadius: 4,
+            border: "0px",
           },
         },
         headCells: {
           style: {
-            textTransform: "uppercase",
+            textTransform: "capitalize",
+            fontSize: "14px",
+            fontWeight: 600,
+            lineHeight: "18.2px",
+            color: TEXT_PRIMARY,
           },
         },
         cells: {
           style: {
             color: DARK,
-            borderRight: `1px solid ${LIGHT_GRAY}`,
           },
         },
       }}

@@ -203,6 +203,57 @@ const RequestablesIcon: React.FC<CustomIconProps> = () => {
   );
 };
 
+const RefreshIcon: React.FC<CustomIconProps> = () => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" fill="none">
+      <path
+        stroke="#000"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M17.5 8A8.1 8.1 0 0 0 2 6m-.5-4v4h4m-4 4A8.1 8.1 0 0 0 17 12m.5 4v-4h-4"
+      />
+    </svg>
+  );
+};
+
+const MaximiseIcon: React.FC<CustomIconProps> = () => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" fill="none">
+      <path
+        fill="#000"
+        d="M2.5 16h2c.283 0 .521.096.713.288.192.192.288.43.287.712a.968.968 0 0 1-.288.713A.964.964 0 0 1 4.5 18h-3a.965.965 0 0 1-.712-.288A.972.972 0 0 1 .5 17v-3c0-.283.096-.52.288-.712A.973.973 0 0 1 1.5 13c.283 0 .521.096.713.288.192.192.288.43.287.712v2Zm14 0v-2c0-.283.096-.52.288-.712A.973.973 0 0 1 17.5 13c.283 0 .521.096.713.288.192.192.288.43.287.712v3a.968.968 0 0 1-.288.713.964.964 0 0 1-.712.287h-3a.965.965 0 0 1-.712-.288A.973.973 0 0 1 13.5 17c0-.283.096-.52.288-.712A.973.973 0 0 1 14.5 16h2ZM2.5 2v2a.968.968 0 0 1-.288.713A.964.964 0 0 1 1.5 5a.965.965 0 0 1-.712-.288A.972.972 0 0 1 .5 4V1C.5.717.596.48.788.288A.972.972 0 0 1 1.5 0h3c.283 0 .521.096.713.288.192.192.288.43.287.712a.968.968 0 0 1-.288.713A.964.964 0 0 1 4.5 2h-2Zm14 0h-2a.965.965 0 0 1-.712-.288A.973.973 0 0 1 13.5 1c0-.283.096-.52.288-.712A.972.972 0 0 1 14.5 0h3c.283 0 .521.096.713.288.192.192.288.43.287.712v3a.968.968 0 0 1-.288.713A.964.964 0 0 1 17.5 5a.965.965 0 0 1-.712-.288A.973.973 0 0 1 16.5 4V2Z"
+      />
+    </svg>
+  );
+};
+
+const MingCuteIcon: React.FC<CustomIconProps> = () => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" fill="none">
+      <path
+        fill="#000"
+        fill-rule="evenodd"
+        d="M.5 2a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-14a2 2 0 0 1-2-2V2Zm11 0h-4v14h4V2Zm2 0h3v14h-3V2Zm-8 14V2h-3v14h3Z"
+        clip-rule="evenodd"
+      />
+    </svg>
+  );
+};
+
+const ExportIcon: React.FC<CustomIconProps> = () => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="24" fill="none">
+      <path
+        fill="#000"
+        fill-rule="evenodd"
+        d="M18.17 8.761a1.125 1.125 0 0 1-1.59 0l-2.955-2.954v11.068a1.125 1.125 0 1 1-2.25 0V5.806L8.42 8.761a1.125 1.125 0 0 1-1.59-1.59l4.875-4.875.795-.796.795.795L18.17 7.17a1.126 1.126 0 0 1 0 1.591ZM4.25 14.625a1.125 1.125 0 0 0-2.25 0V19.5a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3v-4.875a1.125 1.125 0 1 0-2.25 0V19.5a.75.75 0 0 1-.75.75H5a.75.75 0 0 1-.75-.75v-4.875Z"
+        clip-rule="evenodd"
+      />
+    </svg>
+  );
+};
+
 export {
   DashboardIcon,
   LicenseIcon,
@@ -216,4 +267,8 @@ export {
   SettingsIcon,
   ReportsIcon,
   RequestablesIcon,
+  RefreshIcon,
+  MaximiseIcon,
+  MingCuteIcon,
+  ExportIcon,
 };

@@ -77,6 +77,7 @@ const usePaginatedTableData = (
 
   useEffect(() => {
     fetchData(1);
+    //eslint-disable-next-line
   }, []);
 
   return {
