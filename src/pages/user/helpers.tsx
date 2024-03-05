@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
-import { Image, Text } from "@chakra-ui/react";
+import { Button, HStack, Image, Text } from "@chakra-ui/react";
+import { MAIN_GREEN, MAIN_RED } from "utils/color";
 
 export const columns = [
   {
@@ -51,6 +52,48 @@ export const columns = [
       return <Text>{data.category}</Text>;
     },
     sortable: true,
+  },
+];
+
+export const acceptColumns = [
+  {
+    name: "S/N",
+    cell: (data: any) => {
+      return <Text>{data.id}</Text>;
+    },
+    sortable: true,
+  },
+  {
+    name: "Asset Name",
+    cell: (data: any) => {
+      return <Text>{data.name}</Text>;
+    },
+    sortable: true,
+  },
+  {
+    name: "Actions",
+    cell: () => {
+      return (
+        <HStack>
+          <Button
+            aria-label="edit"
+            borderRadius={"50px"}
+            bg={MAIN_GREEN}
+            color={"#FFFCF6"}
+          >
+            Accept
+          </Button>
+          <Button
+            aria-label="delete"
+            borderRadius={"50px"}
+            bg={MAIN_RED}
+            color={"#FFFCF6"}
+          >
+            Reject
+          </Button>
+        </HStack>
+      );
+    },
   },
 ];
 

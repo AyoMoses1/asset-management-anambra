@@ -1,7 +1,7 @@
-import { Heading, Stack } from "@chakra-ui/react";
+import { Heading, Stack, Box } from "@chakra-ui/react";
 import CustomTable from "components/tables/CustomTable";
 import DashboardLayout from "layouts/DashboardLayout";
-import { assets, columns } from "./helpers";
+import { acceptColumns, assets } from "./helpers";
 import useSubHeaderComponentMemo from "components/common/useSubHeaderComponentMemo";
 
 const Accept = () => {
@@ -10,13 +10,15 @@ const Accept = () => {
     <DashboardLayout>
       <Stack spacing={"30px"}>
         <Heading variant={"h3Small"}>Accept/Reject Assets</Heading>
-        <CustomTable
-          columns={columns}
-          data={assets}
-          subHeaderComponent={subHeaderComponentMemo}
-          pagination
-          paginationServer
-        />
+        <Box bg={"white"} p={"12px"}>
+          <CustomTable
+            columns={acceptColumns}
+            data={assets}
+            subHeaderComponent={subHeaderComponentMemo}
+            pagination
+            paginationServer
+          />
+        </Box>
       </Stack>
     </DashboardLayout>
   );
