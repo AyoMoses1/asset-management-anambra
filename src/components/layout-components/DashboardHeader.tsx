@@ -14,35 +14,21 @@ import {
   MenuItem,
   MenuList,
   Spacer,
-  Stack,
   Text,
-  useDisclosure,
 } from "@chakra-ui/react";
 import React from "react";
-import {
-  BORDER_DARK,
-  BORDER_LIGHT,
-  DARK,
-  LIGHT_GRAY,
-  LIGHT_GREEN,
-  TEXT_GRAY,
-  TINT_GREY,
-} from "utils/color";
-import { useNavigate } from "react-router-dom";
-// import { useAppSelector } from "../../store/hook";
-// import { useAppContext } from "../../contexts/AppContext";
-// import LogoutModal from "../modals/LogoutModal";
-import ROUTES from "utils/routeNames";
+import { BORDER_DARK, BORDER_LIGHT, MAIN_RED, TINT_GREY } from "utils/color";
 import { ChevronDownIcon, Search2Icon } from "@chakra-ui/icons";
+import { navDropDown } from "utils/data";
+import { useNavigate } from "react-router-dom";
+import { TEXT_PRIMARY } from "utils/color";
 
 interface DashboardHeaderProps {
   onOpen: () => void;
 }
 const DashboardHeader: React.FC<DashboardHeaderProps> = ({ onOpen }) => {
-  const { onOpen: openLogoutModal } = useDisclosure();
-  const navigate = useNavigate();
   console.log({ onOpen });
-
+  const navigate = useNavigate();
   return (
     <Box
       py={"5px"}
@@ -90,43 +76,21 @@ const DashboardHeader: React.FC<DashboardHeaderProps> = ({ onOpen }) => {
           </MenuButton>
 
           <MenuList pt={0}>
-            <Stack spacing={0} bg={LIGHT_GRAY} p={3}>
-              <Text
-                fontSize={".7rem"}
-                textTransform={"uppercase"}
-                fontWeight={"500"}
-                color={TEXT_GRAY}
-                fontFamily={"rubik"}
+            {navDropDown.map((item) => (
+              <MenuItem
+                icon={<item.icon color={TEXT_PRIMARY}/>}
+                px={"10px"}
+                py={"8px"}
+                onClick={() => navigate(item.link)}
+                fontSize={"14px"}
+                color={item.label === "Logout" ? MAIN_RED : TEXT_PRIMARY}
               >
-                User Role:
-              </Text>
-              <Text fontSize={"sm"} fontFamily={"rubik"} color={"primary.600"}>
-                {"admin"}
-              </Text>
-            </Stack>
-            <MenuItem
-              _hover={{ bg: LIGHT_GREEN }}
-              onClick={() => navigate(ROUTES.EDIT_PROFILE)}
-              py={3}
-            >
-              <Text fontSize={"sm"} color={DARK}>
-                Edit profile
-              </Text>
-            </MenuItem>
-
-            <MenuItem
-              _hover={{ bg: LIGHT_GREEN }}
-              onClick={openLogoutModal}
-              py={3}
-            >
-              <Text fontSize={"sm"} color={DARK}>
-                Logout
-              </Text>
-            </MenuItem>
+                {item.label}
+              </MenuItem>
+            ))}
           </MenuList>
         </Menu>
       </HStack>
-
 
       {/* LOGOUT MODAL */}
       {/* <LogoutModal

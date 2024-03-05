@@ -15,13 +15,18 @@ import {
   ComponentsIcon,
   ConsumablesIcon,
   DashboardIcon,
+  EditProfileIcon,
   ImportIcon,
   KitsIcon,
   LicenseIcon,
+  LogoutIcon,
+  PadlockIcon,
   ReportsIcon,
   RequestablesIcon,
   SettingsIcon,
   UsersIcon,
+  CheckIcon,
+  Assets2Icon
 } from "icons";
 
 export const loginInputs = (): AuthInput[] => {
@@ -131,6 +136,34 @@ export const profileInputs = (): AuthInput[] => {
     },
   ];
 };
+
+export const navDropDown = [
+  {
+    label: "View Assigned Assets",
+    icon: Assets2Icon,
+    link: "/account/accept",
+  },
+  {
+    label: "Accept/Reject Assets",
+    icon: CheckIcon,
+    link: "/account/accept",
+  },
+  {
+    label: "Edit Profile",
+    icon: EditProfileIcon,
+    link: "/dashboard/licenses",
+  },
+  {
+    label: "Change Password",
+    icon: PadlockIcon,
+    link: "/account/change-password",
+  },
+  {
+    label: "Logout",
+    icon: LogoutIcon,
+    link: "/login",
+  },
+];
 
 export const nicheData: NicheProps[] = [
   {

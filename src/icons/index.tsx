@@ -29,6 +29,21 @@ const AssetsIcon: React.FC<CustomIconProps> = () => {
   );
 };
 
+const Assets2Icon: React.FC<CustomIconProps> = () => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="19" height="17" fill="none">
+      <path
+        fill="#1C1C1C"
+        d="M16.05.68h-14a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2v-12a2 2 0 0 0-2-2Zm0 14h-14v-10h14v10Z"
+      />
+      <path
+        fill="#1C1C1C"
+        d="M9.05 6.937 11.712 9.6 9.05 12.262 6.387 9.6 9.05 6.937Z"
+      />
+    </svg>
+  );
+};
+
 const LicenseIcon: React.FC<CustomIconProps> = () => {
   return (
     <svg xmlns="http://www.w3.org/2000/svg" width="21" height="19" fill="none">
@@ -254,6 +269,47 @@ const ExportIcon: React.FC<CustomIconProps> = () => {
   );
 };
 
+const EditProfileIcon: React.FC<CustomIconProps> = () => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="18" fill="none">
+      <path
+        fill="#1C1C1C"
+        d="M.05 13.68v3h8v-1.89h-6.1v-1.11c0-.64 3.13-2.1 6.1-2.1.96.01 1.91.14 2.83.38l1.52-1.52c-1.4-.47-2.85-.73-4.35-.76-2.67 0-8 1.33-8 4Zm8-13c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4Zm0 6a2 2 0 1 1-.001-4 2 2 0 0 1 0 4Zm11.7 3.35-1 1-2.05-2 1-1a.55.55 0 0 1 .77 0l1.28 1.28c.21.21.21.56 0 .77m-9.7 5.54 6.06-6.06 2.05 2-6 6.07h-2.11v-2.01Z"
+      />
+    </svg>
+  );
+};
+const LogoutIcon: React.FC<CustomIconProps> = () => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="none">
+      <path
+        fill="#EF4444"
+        d="M9.05 18.68v-2h7v-14h-7v-2h7c.55 0 1.02.196 1.413.588.392.392.587.862.587 1.412v14c0 .55-.196 1.02-.587 1.413a1.92 1.92 0 0 1-1.413.587h-7Zm-2-4-1.375-1.45 2.55-2.55H.05v-2h8.175l-2.55-2.55L7.05 4.68l5 5-5 5Z"
+      />
+    </svg>
+  );
+};
+const PadlockIcon: React.FC<CustomIconProps> = () => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="17" height="22" fill="none">
+      <path
+        fill="#1C1C1C"
+        d="M8.05 16.68a2 2 0 0 1-2-2c0-1.11.89-2 2-2a2 2 0 1 1 0 4Zm6 3v-10h-12v10h12Zm0-12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-12a2 2 0 0 1-2-2v-10c0-1.11.89-2 2-2h1v-2a5 5 0 0 1 10 0v2h1Zm-6-5a3 3 0 0 0-3 3v2h6v-2a3 3 0 0 0-3-3Z"
+      />
+    </svg>
+  );
+};
+const CheckIcon: React.FC<CustomIconProps> = () => {
+  return (
+    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="none">
+      <path
+        fill="#1C1C1C"
+        d="m9.05 16.85-3.47-3.47a.997.997 0 1 0-1.41 1.41l4.18 4.18c.39.39 1.02.39 1.41 0L20.34 8.39a.997.997 0 1 0-1.41-1.41l-9.88 9.87Z"
+      />
+    </svg>
+  );
+};
+
 export {
   DashboardIcon,
   LicenseIcon,
@@ -271,4 +327,9 @@ export {
   MaximiseIcon,
   MingCuteIcon,
   ExportIcon,
+  EditProfileIcon,
+  PadlockIcon,
+  LogoutIcon,
+  CheckIcon,
+  Assets2Icon,
 };
