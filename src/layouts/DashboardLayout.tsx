@@ -1,21 +1,15 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import {
-  Box,
-  Container,
-  Flex,
-  Stack,
-  useDisclosure,
-} from "@chakra-ui/react";
+import { Box, Container, Flex, Stack, useDisclosure } from "@chakra-ui/react";
 import React, { ReactNode } from "react";
 import DashboardHeader from "components/layout-components/DashboardHeader";
 import SideNavigation from "components/layout-components/SideNavigation";
 import { LIGHT_BG } from "utils/color";
 
-
 interface DashboardLayoutProps {
   children: ReactNode;
+  bg?: string;
 }
-const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
+const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children, bg }) => {
   const { onOpen } = useDisclosure();
 
   return (
@@ -23,7 +17,7 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children }) => {
       <SideNavigation />
       <Stack
         flex={1}
-        bg={LIGHT_BG}
+        bg={bg ? bg : LIGHT_BG}
         w={"full"}
         height={"full"}
         pos={"relative"}

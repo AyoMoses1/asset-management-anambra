@@ -58,6 +58,32 @@ export const forgotPasswordInputs = (): AuthInput[] => {
   ];
 };
 
+export const changePaswordInputs = (): AuthInput[] => {
+  return [
+    {
+      name: "currentPassword",
+      label: "Current Pasword",
+      rule: "Current password is required",
+      isRequired: true,
+      type: "password",
+    },
+    {
+      name: "newPassword",
+      label: "New Pasword",
+      rule: "Please enter a new password",
+      isRequired: true,
+      type: "password",
+    },
+    {
+      name: "currentPassword",
+      label: "Confirm Pasword",
+      rule: "Current password is required",
+      isRequired: true,
+      type: "password",
+    },
+  ];
+};
+
 export const nicheData: NicheProps[] = [
   {
     image: allocation,

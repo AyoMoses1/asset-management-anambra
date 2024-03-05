@@ -2,6 +2,7 @@ import { LockIcon } from "@chakra-ui/icons";
 import { Button, Image, VStack } from "@chakra-ui/react";
 import sabinus from "assets/sabinus.png";
 import { IoPencilOutline, IoPrintOutline } from "react-icons/io5";
+import { Link } from "react-router-dom";
 
 const InfoCard = () => {
   return (
@@ -10,7 +11,13 @@ const InfoCard = () => {
       <Button variant={"outline"} w={"full"} leftIcon={<IoPencilOutline />}>
         Edit your profile
       </Button>
-      <Button variant={"outline"} w={"full"} leftIcon={<LockIcon />}>
+      <Button
+        as={Link}
+        variant={"outline"}
+        w={"full"}
+        leftIcon={<LockIcon />}
+        to={"/account/change-password"}
+      >
         Change password
       </Button>
       <Button variant={"outline"} w={"full"} leftIcon={<IoPrintOutline />}>

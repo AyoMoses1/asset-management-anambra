@@ -4,6 +4,7 @@ import Signin from "pages/auth/Signin";
 import ForgotPassword from "pages/auth/ForgotPassword";
 import User from "pages/user";
 import Accept from "pages/user/Accept";
+import ChangePassword from "pages/auth/ChangePassword";
 
 export default [
   {
@@ -36,6 +37,12 @@ export default [
   {
     path: "/account/accept",
     element: <Accept />,
+    name: "Accept Assets",
+  },
+
+  {
+    path: "/account/change-password",
+    element: <ChangePassword />,
     name: "Accept Assets",
   },
 

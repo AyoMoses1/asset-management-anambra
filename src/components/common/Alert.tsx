@@ -49,7 +49,7 @@ const AlertComponent = ({ title }: AlertProps) => {
           <Link
             fontSize={"sm"}
             as={ReactLink}
-            to={"/"}
+            to={"/account/accept"}
             fontWeight={700}
             color={TEXT_DARK_GRAY}
             mx={"auto"}

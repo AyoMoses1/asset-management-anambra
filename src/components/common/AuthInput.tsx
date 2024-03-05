@@ -32,6 +32,8 @@ interface AuthInputProps extends InputProps {
   isIconComponent?: boolean;
   name: string;
   rules?: any;
+  isFlexed?: boolean;
+  includePasswordIcon?: boolean;
   isPassword?: boolean;
   iconProp?: IconProps;
   isSelect?: boolean;
@@ -53,6 +55,8 @@ const AuthInput: React.FC<AuthInputProps> = ({
   data,
   isPassword,
   isSelect,
+  isFlexed,
+  includePasswordIcon,
   name,
   Icon,
   isDisabled,
@@ -105,6 +109,84 @@ const AuthInput: React.FC<AuthInputProps> = ({
       </FormControl>
     );
 
+  if (isFlexed)
+    return (
+      <FormControl isInvalid={Boolean(error)} display={"flex"}>
+        {label && (
+          <Flex alignItems={"center"} minW={"150px"}>
+            <FormLabel
+              color={`text.primary`}
+              fontSize={"16px"}
+              mb={1}
+              fontWeight={"600"}
+              {...labelStyles}
+              fontFamily={"'IBM Plex Sans', sans"}
+              {...labelStyles}
+            >
+              {label}
+            </FormLabel>
+            {isRequired && (
+              <Box
+                bg={"main.red"}
+                width={"7.36px"}
+                height={"7.36px"}
+                borderRadius={"50%"}
+              ></Box>
+            )}
+          </Flex>
+        )}
+        <InputGroup alignItems={"center"}>
+          {Icon && (
+            <InputLeftElement
+              as={Center}
+              h={"full"}
+              w={12}
+              color={"gray.400"}
+              fontSize={"lg"}
+            >
+              {isIconComponent ? (
+                Icon
+              ) : (
+                <ChakraIcon
+                  as={Icon as IconType}
+                  fontSize={"24px"}
+                  {...iconProp}
+                />
+              )}
+            </InputLeftElement>
+          )}
+
+          {isPassword && includePasswordIcon && (
+            <InputRightElement
+              variant={"link"}
+              as={IconButton}
+              h={"full"}
+              w={12}
+              color={isOpen ? "brand.500" : "gray.400"}
+              fontSize={"lg"}
+              onClick={onToggle}
+              aria-label="Show password"
+              icon={
+                isOpen ? (
+                  <ChakraIcon fontSize={"20px"} as={IoEyeOffOutline} />
+                ) : (
+                  <ChakraIcon fontSize={"20px"} as={IoEyeOutline} />
+                )
+              }
+            />
+          )}
+          <Input
+            {...rest}
+            type={isPassword ? (isOpen ? "text" : "password") : rest.type}
+            isDisabled={isDisabled}
+            {...field}
+          />
+        </InputGroup>
+        {Boolean(error) && (
+          <FormErrorMessage fontSize={"xs"}>{error?.message}</FormErrorMessage>
+        )}
+      </FormControl>
+    );
   return (
     <FormControl isInvalid={Boolean(error)}>
       {label && (

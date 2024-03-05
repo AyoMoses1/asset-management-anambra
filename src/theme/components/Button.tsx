@@ -3,6 +3,7 @@ import {
   defineStyleConfig,
   StyleFunctionProps,
 } from "@chakra-ui/react";
+import { BORDER_LIGHT } from "utils/color";
 
 const primary = (props: StyleFunctionProps) =>
   defineStyle({
@@ -19,11 +20,11 @@ const outline = (props: StyleFunctionProps) =>
   defineStyle({
     color: props.theme.colors.main.black,
     border: "1px solid",
-    borderColor: "#CAC5C4",
+    borderColor: BORDER_LIGHT,
     borderRadius: 4,
     _hover: {
-      background: props.theme.colors.main.blue,
-      color: props.theme.colors.tint.blue,
+      background: props.theme.colors.main.yellow,
+      color: props.theme.colors.main.black,
     },
   });
 
