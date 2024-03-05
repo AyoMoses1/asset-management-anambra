@@ -3,6 +3,7 @@ import Landing from "pages/landing";
 import Signin from "pages/auth/Signin";
 import ForgotPassword from "pages/auth/ForgotPassword";
 import User from "pages/user";
+import Accept from "pages/user/Accept";
 
 export default [
   {
@@ -30,6 +31,12 @@ export default [
     path: "/account/view-assets",
     element: <User />,
     name: "User Panel",
+  },
+
+  {
+    path: "/account/accept",
+    element: <Accept />,
+    name: "Accept Assets",
   },
 
   {
