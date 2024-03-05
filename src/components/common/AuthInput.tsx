@@ -21,7 +21,6 @@ import React, { ComponentProps } from "react";
 import { useController } from "react-hook-form";
 import { IconType } from "react-icons";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
-import { TEXT_DARK } from "utils/color";
 import Select from "react-select";
 import CustomSelect from "./CustomSelect";
 
@@ -79,15 +78,22 @@ const AuthInput: React.FC<AuthInputProps> = ({
 
   if (isSelect)
     return (
-      <FormControl isInvalid={Boolean(error)}>
+      <FormControl
+        isInvalid={Boolean(error)}
+        display={isFlexed ? "flex" : ""}
+        gap={isFlexed ? "24px" : ""}
+        alignItems={"center"}
+        justifyContent={isFlexed ? "end" : ""}
+      >
         {label && (
           <FormLabel
-            color={TEXT_DARK}
-            fontSize={"14px"}
+            color={`text.primary`}
+            fontSize={"16px"}
             mb={1}
             fontWeight={"600"}
             {...labelStyles}
             fontFamily={"'IBM Plex Sans', sans"}
+            {...labelStyles}
           >
             {label}
           </FormLabel>
@@ -111,13 +117,14 @@ const AuthInput: React.FC<AuthInputProps> = ({
 
   if (isFlexed)
     return (
-      <FormControl isInvalid={Boolean(error)} display={"flex"}>
+      <FormControl isInvalid={Boolean(error)} display={"flex"} gap={"24px"}>
         {label && (
-          <Flex alignItems={"center"} minW={"150px"}>
+          <Flex alignItems={"center"} w={"30%"} justifyContent={"flex-end"}>
             <FormLabel
               color={`text.primary`}
               fontSize={"16px"}
               mb={1}
+              textAlign={isFlexed ? "end" : "start"}
               fontWeight={"600"}
               {...labelStyles}
               fontFamily={"'IBM Plex Sans', sans"}

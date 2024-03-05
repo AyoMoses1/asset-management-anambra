@@ -7,12 +7,13 @@ type NicheProps = {
 type AuthInput = {
   name: string;
   label: string;
-  rule: string;
+  rule?: string;
   message?: string;
   minLength?: number;
   placeholder?: string;
   isRequired: boolean;
   type: string;
+  data?:  T[]
 };
 
 type SidebarContentType = {

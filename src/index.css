@@ -50,3 +50,7 @@
   border-radius: 50%;
   box-shadow: 0 0 500px 100px rgba(255, 211, 56, 0.7);
 }
+
+.custom-select {
+  min-width: 590px;
+}

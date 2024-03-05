@@ -84,6 +84,54 @@ export const changePaswordInputs = (): AuthInput[] => {
   ];
 };
 
+export const profileInputs = (): AuthInput[] => {
+  return [
+    {
+      name: "firstName",
+      label: "First Name",
+      rule: "First name is required",
+      isRequired: true,
+      type: "text",
+    },
+    {
+      name: "lastName",
+      label: "Last Name",
+      rule: "Last name is required",
+      isRequired: true,
+      type: "text",
+    },
+    {
+      name: "language",
+      label: "Language",
+      placeholder: "Please select a language",
+      isRequired: false,
+      type: "select",
+      data: [
+        { name: "sssssss", value: 444 },
+        { name: "sssssss", value: 444 },
+      ],
+    },
+    {
+      name: "phone",
+      label: "Phone",
+      isRequired: false,
+      type: "text",
+    },
+    {
+      name: "website",
+      label: "Website",
+      isRequired: false,
+      type: "text",
+    },
+    {
+      name: "email",
+      label: "Gravatar Email addres (Private)",
+      isRequired: false,
+      type: "email",
+    },
+  ];
+};
+
 export const nicheData: NicheProps[] = [
   {
     image: allocation,

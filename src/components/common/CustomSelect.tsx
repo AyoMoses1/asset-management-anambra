@@ -31,12 +31,13 @@ const CustomSelect: React.FC<CustomSelectProps> = ({
       padding: theme.sizes["1"],
       borderRadius: "6px",
       fontSize: fontSize === "sm" ? ".875rem" : "1rem",
-      border: `1px solid ${theme.colors.light.border.neutralGray}`,
+      marginBottom: "20px",
+      border: `1px solid ${theme.colors.tint.grey}`,
       ":hover": {
-        borderColor: theme.colors.light.border.neutralGray,
+        borderColor: theme.colors.tint.grey,
       },
       ":focus": {
-        borderColor: theme.colors.light.border.neutralGray,
+        borderColor: theme.colors.tint.grey,
       },
     }),
     menu: (style) => ({
