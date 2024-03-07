@@ -6,3 +6,12 @@ type ResponseDataType = {
   data?: any;
   code?: number;
 };
+
+type DashboardCard = {
+  value: number;
+  title: string;
+  icon: string;
+  link: string;
+  color1: string;
+  color2: string;
+}

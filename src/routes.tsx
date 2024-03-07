@@ -6,6 +6,7 @@ import User from "pages/user";
 import Accept from "pages/user/Accept";
 import ChangePassword from "pages/auth/ChangePassword";
 import Profile from "pages/user/Profile";
+import AdminDashboard from "pages/admin/dashboard";
 
 export default [
   {
@@ -52,7 +53,11 @@ export default [
     element: <Profile />,
     name: "User Profile",
   },
-
+  {
+    path: "/dashboard",
+    element: <AdminDashboard />,
+    name: "Dashboard",
+  },
   {
     path: "/dashboard/licenses",
     element: <User />,

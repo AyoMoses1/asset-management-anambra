@@ -21,3 +21,4 @@ type SidebarContentType = {
   link: string;
   icon: IconType | string;
 };
+

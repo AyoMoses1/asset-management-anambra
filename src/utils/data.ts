@@ -9,6 +9,12 @@ import s1 from "assets/Frame 2076.svg";
 import s2 from "assets/Frame 2077.svg";
 import s3 from "assets/Frame 2078.svg";
 import s4 from "assets/Frame 2079.svg";
+import dc1 from "assets/dc1.png"
+import dc2 from "assets/dc2.png"
+import dc3 from "assets/dc3.png"
+import dc4 from "assets/dc4.png"
+import dc5 from "assets/dc5.png"
+
 import {
   AccessoriesIcon,
   AssetsIcon,
@@ -26,7 +32,7 @@ import {
   SettingsIcon,
   UsersIcon,
   CheckIcon,
-  Assets2Icon
+  Assets2Icon,
 } from "icons";
 
 export const loginInputs = (): AuthInput[] => {
@@ -303,5 +309,48 @@ export const sidebarContents: SidebarContentType[] = [
     name: "requestables",
     link: "/dashboard/requestables",
     icon: RequestablesIcon,
+  },
+];
+
+export const dashboardCards: DashboardCard[] = [
+  {
+    title: "Assets",
+    value: 200,
+    color1: "#8595EE",
+    color2: "#1E33A5",
+    link: "",
+    icon: dc1,
+  },
+  {
+    title: "Licenses",
+    value: 24,
+    color1: "#85EE8F",
+    color2: "#21A51E",
+    link: "",
+    icon: dc2,
+  },
+  {
+    title: "Accessories",
+    value: 32,
+    color1: "#EE8585",
+    color2: "#A51E1E",
+    link: "",
+    icon: dc3,
+  },
+  {
+    title: "Consumables",
+    value: 69,
+    color1: "#85EEEE",
+    color2: "#1EA59D",
+    link: "",
+    icon: dc4,
+  },
+  {
+    title: "Components",
+    value: 144,
+    color1: "#C685EE",
+    color2: "#821EA5",
+    link: "",
+    icon: dc5,
   },
 ];
