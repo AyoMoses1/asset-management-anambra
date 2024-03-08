@@ -7,6 +7,8 @@ import Accept from "pages/user/Accept";
 import ChangePassword from "pages/auth/ChangePassword";
 import Profile from "pages/user/Profile";
 import AdminDashboard from "pages/admin/dashboard";
+import Assets from "pages/admin/assets";
+import CreateNewAsset from "pages/admin/assets/CreateNew";
 
 export default [
   {
@@ -61,6 +63,16 @@ export default [
   {
     path: "/dashboard/licenses",
     element: <User />,
+    name: "User Panel",
+  },
+  {
+    path: "/dashboard/assets",
+    element: <Assets />,
+    name: "User Panel",
+  },
+  {
+    path: "/dashboard/assets/create-new",
+    element: <CreateNewAsset />,
     name: "User Panel",
   },
   {

@@ -13,12 +13,12 @@ import { dashboardCards } from "utils/data";
 import Card from "./Card";
 import CustomTable from "components/tables/CustomTable";
 import { assets, columns } from "pages/user/helpers";
-import useSubHeaderComponentMemo from "components/common/useSubHeaderComponentMemo";
+// import useSubHeaderComponentMemo from "components/common/useSubHeaderComponentMemo";
 import StatusChart from "./Chart";
 
 const Index = () => {
-  const { subHeaderComponentMemo } = useSubHeaderComponentMemo();
-  console.log({ subHeaderComponentMemo });
+  // const { subHeaderComponentMemo } = useSubHeaderComponentMemo();
+  // console.log({ subHeaderComponentMemo });
   return (
     <DashboardLayout>
       <Stack spacing={"30px"}>

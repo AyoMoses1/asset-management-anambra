@@ -9,11 +9,11 @@ import s1 from "assets/Frame 2076.svg";
 import s2 from "assets/Frame 2077.svg";
 import s3 from "assets/Frame 2078.svg";
 import s4 from "assets/Frame 2079.svg";
-import dc1 from "assets/dc1.png"
-import dc2 from "assets/dc2.png"
-import dc3 from "assets/dc3.png"
-import dc4 from "assets/dc4.png"
-import dc5 from "assets/dc5.png"
+import dc1 from "assets/dc1.png";
+import dc2 from "assets/dc2.png";
+import dc3 from "assets/dc3.png";
+import dc4 from "assets/dc4.png";
+import dc5 from "assets/dc5.png";
 
 import {
   AccessoriesIcon,
@@ -33,6 +33,10 @@ import {
   UsersIcon,
   CheckIcon,
   Assets2Icon,
+  ExportIcon,
+  MingCuteIcon,
+  MaximiseIcon,
+  RefreshIcon,
 } from "icons";
 
 export const loginInputs = (): AuthInput[] => {
@@ -91,6 +95,142 @@ export const changePaswordInputs = (): AuthInput[] => {
       rule: "Current password is required",
       isRequired: true,
       type: "password",
+    },
+  ];
+};
+
+export const createAssetInputs = (): AuthInput[] => {
+  return [
+    {
+      name: "mds",
+      label: "MDA",
+      isRequired: false,
+      type: "select",
+    },
+    {
+      name: "tag1",
+      label: "Asset Tag",
+      rule: "Please enter a tag",
+      isRequired: true,
+      type: "number",
+    },
+    {
+      name: "serial",
+      label: "Serial",
+      isRequired: false,
+      type: "text",
+    },
+    {
+      name: "tag2",
+      label: "Asset Tag 2",
+      rule: "Please enter a second tag",
+      isRequired: true,
+      type: "number",
+    },
+    {
+      name: "serial2",
+      label: "Serial 2",
+      isRequired: false,
+      type: "text",
+    },
+    {
+      name: "model",
+      label: "Model",
+      rule: "Please select a model",
+      placeholder: "Select a Model",
+      isRequired: true,
+      type: "select",
+    },
+    {
+      name: "status",
+      label: "Status",
+      rule: "Please select a second tag",
+      placeholder: "Select Status",
+      isRequired: true,
+      type: "select",
+    },
+    {
+      name: "notes",
+      label: "Notes",
+      placeholder: "Enter note here...",
+      isRequired: false,
+      type: "textarea",
+    },
+    {
+      name: "location",
+      label: "Default Location",
+      rule: "Please select a location",
+      placeholder: "Select a Location",
+      isRequired: true,
+      type: "select",
+    },
+  ];
+};
+
+export const createAssetInputsTwo = (): AuthInput[] => {
+  return [
+    {
+      name: "mds",
+      label: "MDA",
+      isRequired: false,
+      type: "select",
+    },
+    {
+      name: "tag1",
+      label: "Asset Tag",
+      rule: "Please enter a tag",
+      isRequired: true,
+      type: "number",
+    },
+    {
+      name: "serial",
+      label: "Serial",
+      isRequired: false,
+      type: "text",
+    },
+    {
+      name: "tag2",
+      label: "Asset Tag 2",
+      rule: "Please enter a second tag",
+      isRequired: true,
+      type: "number",
+    },
+    {
+      name: "serial2",
+      label: "Serial 2",
+      isRequired: false,
+      type: "text",
+    },
+    {
+      name: "model",
+      label: "Model",
+      rule: "Please select a model",
+      placeholder: "Select a Model",
+      isRequired: true,
+      type: "select",
+    },
+    {
+      name: "status",
+      label: "Status",
+      rule: "Please select a second tag",
+      placeholder: "Select Status",
+      isRequired: true,
+      type: "select",
+    },
+    {
+      name: "notes",
+      label: "Notes",
+      placeholder: "Enter note here...",
+      isRequired: false,
+      type: "textarea",
+    },
+    {
+      name: "location",
+      label: "Default Location",
+      rule: "Please select a location",
+      placeholder: "Select a Location",
+      isRequired: true,
+      type: "select",
     },
   ];
 };
@@ -352,5 +492,24 @@ export const dashboardCards: DashboardCard[] = [
     color2: "#821EA5",
     link: "",
     icon: dc5,
+  },
+];
+
+export const tableFilters = () => [
+  {
+    icon: RefreshIcon,
+    ariaLabel: "Export Icon",
+  },
+  {
+    icon: MaximiseIcon,
+    ariaLabel: "Export Icon",
+  },
+  {
+    icon: MingCuteIcon,
+    ariaLabel: "Export Icon",
+  },
+  {
+    icon: ExportIcon,
+    ariaLabel: "Export Icon",
   },
 ];

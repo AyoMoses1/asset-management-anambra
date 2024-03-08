@@ -3,9 +3,10 @@ import CustomTable from "components/tables/CustomTable";
 import DashboardLayout from "layouts/DashboardLayout";
 import { acceptColumns, assets } from "./helpers";
 import useSubHeaderComponentMemo from "components/common/useSubHeaderComponentMemo";
+import FilterComponent from "components/common/FilterComponent";
 
 const Accept = () => {
-  const { subHeaderComponentMemo } = useSubHeaderComponentMemo();
+  const { subHeaderComponentMemo } = useSubHeaderComponentMemo(FilterComponent);
   return (
     <DashboardLayout>
       <Stack spacing={"30px"}>

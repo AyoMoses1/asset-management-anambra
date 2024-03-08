@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+
 type NicheProps = {
   title: string;
   data: string;
@@ -22,3 +24,8 @@ type SidebarContentType = {
   icon: IconType | string;
 };
 
+interface FilterComponentProp {
+  onFilter: (e: any) => void;
+  onClear: () => void;
+  filterText: string;
+}

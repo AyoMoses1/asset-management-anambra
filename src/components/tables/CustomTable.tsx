@@ -15,6 +15,9 @@ const CustomTable: React.FC<CustomTableProps> = (props) => {
         rows: {
           style: {
             "&:not(:last-of-type)": { border: 0 },
+            "&:selected": {
+              background: "red",
+            },
           },
         },
         tableWrapper: {
@@ -56,6 +59,7 @@ const CustomTable: React.FC<CustomTableProps> = (props) => {
         cells: {
           style: {
             color: DARK,
+            fontSize: "324px",
           },
         },
       }}

@@ -1,7 +1,9 @@
 import React from "react";
-import FilterComponent from "./FilterComponent";
+// import FilterComponent from "./FilterComponent";
 
-function useSubHeaderComponentMemo() {
+function useSubHeaderComponentMemo(
+  FilterComponent: React.FC<FilterComponentProp>
+) {
   const [filterText, setFilterText] = React.useState("");
   const [resetPaginationToggle, setResetPaginationToggle] =
     React.useState(false);

@@ -1,18 +1,21 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from "react";
 import {
+  Button,
   Center,
+  Flex,
   HStack,
   Icon,
   IconButton,
   Input,
   InputGroup,
   InputRightElement,
+  Select,
   Spacer,
 } from "@chakra-ui/react";
 import { BORDER_LIGHT, ICON_DARK, TINT_GREY } from "utils/color";
 import { SearchIcon } from "@chakra-ui/icons";
-import { ExportIcon, MaximiseIcon, MingCuteIcon, RefreshIcon } from "icons";
+import { tableFilters } from "utils/data";
 
 interface FilterComponentProp {
   onFilter: (e: any) => void;
@@ -25,12 +28,14 @@ const FilterComponent: React.FC<FilterComponentProp> = ({
 }) => {
   return (
     <HStack
-      flexWrap={"wrap"}
-      flexDir={["column-reverse", "column-reverse", "row"]}
       spacing={"16px"}
       alignItems={["flex-start", "flex-start", "center"]}
       w={"full"}
     >
+      <Flex gap={"6px"}>
+        <Select placeholder="Select a bulk action" />
+        <Button variant={"outline"}>Go</Button>
+      </Flex>
       <Spacer />
 
       <InputGroup flex={1} maxW={["full", "full", 234]}>
@@ -46,39 +51,16 @@ const FilterComponent: React.FC<FilterComponentProp> = ({
         />
       </InputGroup>
       <HStack spacing={0} width={"232px"}>
-        <IconButton
-          aria-label="Search database"
-          icon={<RefreshIcon />}
-          variant={"outline"}
-          borderColor={BORDER_LIGHT}
-          borderRadius={0}
-          width={"full"}
-        />
-        <IconButton
-          aria-label="Search database"
-          icon={<MaximiseIcon />}
-          variant={"outline"}
-          borderColor={BORDER_LIGHT}
-          borderRadius={0}
-          width={"full"}
-        />
-        <IconButton
-          aria-label="Search database"
-          icon={<MingCuteIcon />}
-          variant={"outline"}
-          borderColor={BORDER_LIGHT}
-          borderRadius={0}
-          width={"full"}
-        />
-
-        <IconButton
-          aria-label="Search database"
-          icon={<ExportIcon />}
-          borderColor={BORDER_LIGHT}
-          variant={"outline"}
-          borderRadius={0}
-          width={"full"}
-        />
+        {tableFilters().map((item) => (
+          <IconButton
+            aria-label={item.ariaLabel}
+            icon={<item.icon />}
+            variant={"outline"}
+            borderColor={BORDER_LIGHT}
+            borderRadius={0}
+            width={"full"}
+          />
+        ))}
       </HStack>
     </HStack>
   );
