@@ -1,5 +1,12 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { Grid, GridItem, HStack, Heading, Stack } from "@chakra-ui/react";
+import {
+  Grid,
+  GridItem,
+  HStack,
+  Heading,
+  Spacer,
+  Stack,
+} from "@chakra-ui/react";
 import DashboardLayout from "layouts/DashboardLayout";
 import { TEXT_PRIMARY } from "utils/color";
 import { dashboardCards } from "utils/data";
@@ -11,6 +18,7 @@ import StatusChart from "./Chart";
 
 const Index = () => {
   const { subHeaderComponentMemo } = useSubHeaderComponentMemo();
+  console.log({ subHeaderComponentMemo });
   return (
     <DashboardLayout>
       <Stack spacing={"30px"}>
@@ -23,7 +31,7 @@ const Index = () => {
           ))}
         </HStack>
         <Grid templateColumns={"repeat(6, 1fr)"} columnGap={12}>
-          <GridItem colSpan={4}>
+          <GridItem colSpan={5}>
             <CustomTable
               columns={columns as any}
               data={assets}
@@ -32,8 +40,9 @@ const Index = () => {
               pagination
               paginationServer
             />
+            <Spacer />
           </GridItem>
-          <GridItem colSpan={2}>
+          <GridItem colSpan={1}>
             <StatusChart />
           </GridItem>
           <GridItem colSpan={3}>
