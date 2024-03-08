@@ -1,10 +1,16 @@
-import { HStack, Heading, Stack } from "@chakra-ui/react";
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { Grid, GridItem, HStack, Heading, Stack } from "@chakra-ui/react";
 import DashboardLayout from "layouts/DashboardLayout";
 import { TEXT_PRIMARY } from "utils/color";
 import { dashboardCards } from "utils/data";
 import Card from "./Card";
+import CustomTable from "components/tables/CustomTable";
+import { assets, columns } from "pages/user/helpers";
+import useSubHeaderComponentMemo from "components/common/useSubHeaderComponentMemo";
+import StatusChart from "./Chart";
 
-const index = () => {
+const Index = () => {
+  const { subHeaderComponentMemo } = useSubHeaderComponentMemo();
   return (
     <DashboardLayout>
       <Stack spacing={"30px"}>
@@ -16,9 +22,44 @@ const index = () => {
             <Card {...item} />
           ))}
         </HStack>
+        <Grid templateColumns={"repeat(6, 1fr)"} columnGap={12}>
+          <GridItem colSpan={4}>
+            <CustomTable
+              columns={columns as any}
+              data={assets}
+              responsive={true}
+              // subHeaderComponent={subHeaderComponentMemo}
+              pagination
+              paginationServer
+            />
+          </GridItem>
+          <GridItem colSpan={2}>
+            <StatusChart />
+          </GridItem>
+          <GridItem colSpan={3}>
+            <CustomTable
+              columns={columns as any}
+              data={assets}
+              responsive={true}
+              // subHeaderComponent={subHeaderComponentMemo}
+              pagination
+              paginationServer
+            />{" "}
+          </GridItem>
+          <GridItem colSpan={3}>
+            <CustomTable
+              columns={columns as any}
+              data={assets}
+              responsive={true}
+              // subHeaderComponent={subHeaderComponentMemo}
+              pagination
+              paginationServer
+            />{" "}
+          </GridItem>
+        </Grid>
       </Stack>
     </DashboardLayout>
   );
 };
 
-export default index;
+export default Index;

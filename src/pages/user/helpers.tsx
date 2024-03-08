@@ -58,6 +58,7 @@ export const columns = [
 export const acceptColumns = [
   {
     name: "S/N",
+    width: "6%",
     cell: (data: any) => {
       return <Text>{data.id}</Text>;
     },
@@ -65,6 +66,7 @@ export const acceptColumns = [
   },
   {
     name: "Asset Name",
+    width: "70%",
     cell: (data: any) => {
       return <Text>{data.name}</Text>;
     },
