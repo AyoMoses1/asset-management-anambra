@@ -11,11 +11,17 @@ import {
   HStack,
   Heading,
   IconButton,
+  useDisclosure,
 } from "@chakra-ui/react";
 import AuthInput from "components/common/AuthInput";
 import { CheckIcon } from "icons";
 import { BORDER_LIGHT } from "utils/color";
-import { createAssetInputsTwo, createAssetInputsThree } from "utils/data";
+import ModalComponent from "components/modals/FormModal";
+import {
+  createAssetInputsTwo,
+  createAssetInputsThree,
+  assetModelInputs,
+} from "utils/data";
 import { useForm } from "react-hook-form";
 import {
   ChevronLeftIcon,
@@ -31,6 +37,8 @@ interface SecondFormProps {
 
 const SecondForm: React.FC<SecondFormProps> = ({ setActiveStep }) => {
   const { control } = useForm();
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <Box
       bg={"white"}
@@ -143,7 +151,9 @@ const SecondForm: React.FC<SecondFormProps> = ({ setActiveStep }) => {
                     />
                     {input.addNew &&
                       (typeof input.addNew === "string" ? (
-                        <Button variant={"outline"}>{input.addNew}</Button>
+                        <Button variant={"outline"} onClick={onOpen}>
+                          {input.addNew}
+                        </Button>
                       ) : (
                         <IconButton
                           variant={"outline"}
@@ -171,6 +181,42 @@ const SecondForm: React.FC<SecondFormProps> = ({ setActiveStep }) => {
           <Button leftIcon={<CheckIcon />}>Save</Button>
         </Flex>
       </HStack>
+      <ModalComponent
+        onClose={onClose}
+        isOpen={isOpen}
+        size="3xl"
+        title="Create Asset Model"
+      >
+        {assetModelInputs().map((input, idx) => (
+          <AuthInput
+            key={idx}
+            isFlexed
+            control={control}
+            name={input.name}
+            autoComplete={"none"}
+            placeholder={input.placeholder}
+            isIconComponent
+            label={input.label}
+            type={input.type}
+            bg={"transparent"}
+            isPassword={input.type === "password"}
+            isRequired={input.isRequired}
+            rules={{
+              required: input.rule,
+              minLength: {
+                value: input.minLength,
+                message: input.message,
+              },
+            }}
+          />
+        ))}
+        <Flex gap={"8px"} justifyContent={"flex-end"}>
+          <Button variant={"outline"} onClick={onClose}>
+            Cancel
+          </Button>
+          <Button leftIcon={<CheckIcon />}>Save</Button>
+        </Flex>
+      </ModalComponent>
     </Box>
   );
 };

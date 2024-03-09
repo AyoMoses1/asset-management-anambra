@@ -300,6 +300,57 @@ export const profileInputs = (): AuthInput[] => {
   ];
 };
 
+export const assetModelInputs = (): AuthInput[] => {
+  return [
+    {
+      name: "name",
+      label: "Name",
+      rule: "Name of model is required",
+      isRequired: true,
+      type: "text",
+    },
+    {
+      name: "category",
+      label: "Category",
+      placeholder: "Please select a category",
+      isRequired: true,
+      type: "select",
+      data: [
+        { name: "sssssss", value: 444 },
+        { name: "sssssss", value: 444 },
+      ],
+    },
+    {
+      name: "manufacturer",
+      label: "Manufacturer",
+      placeholder: "Please select a manufacturer",
+      isRequired: true,
+      type: "select",
+      data: [
+        { name: "sssssss", value: 444 },
+        { name: "sssssss", value: 444 },
+      ],
+    },
+    {
+      name: "modelNumber",
+      label: "Model No",
+      isRequired: false,
+      type: "text",
+    },
+    {
+      name: "fieldset",
+      label: "Fieldset",
+      placeholder: "No custom fields",
+      isRequired: false,
+      type: "select",
+      data: [
+        { name: "sssssss", value: 444 },
+        { name: "sssssss", value: 444 },
+      ],
+    },
+  ];
+};
+
 export const navDropDown = [
   {
     label: "View Assigned Assets",
