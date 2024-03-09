@@ -387,7 +387,7 @@ export const mainAssets = [
     name: "Drill",
     model: "12345678901234",
     serial: "MNO123456789",
-    checkedOutTo: "Commissioner’s table setup",
+    checkedOutTo: "Commissioner's table setup",
     status: true,
     mda: "Anambra MDA",
     checkIn: true,

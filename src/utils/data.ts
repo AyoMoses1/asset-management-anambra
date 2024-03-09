@@ -164,6 +164,19 @@ export const createAssetInputs = (): AuthInput[] => {
       isRequired: true,
       type: "select",
     },
+    {
+      name: "requestable",
+      label: "Requestable",
+      isRequired: false,
+      type: "checkbox",
+    },
+    {
+      name: "user",
+      label: "User",
+      placeholder: "Select a file",
+      isRequired: true,
+      type: "file",
+    },
   ];
 };
 
