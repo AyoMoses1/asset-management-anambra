@@ -1,6 +1,14 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from "react";
-import { Box, Button, HStack, Heading, Spacer } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Flex,
+  HStack,
+  Heading,
+  IconButton,
+  Spacer,
+} from "@chakra-ui/react";
 import AuthInput from "components/common/AuthInput";
 import { BORDER_LIGHT } from "utils/color";
 import { createAssetInputs } from "utils/data";
@@ -33,28 +41,40 @@ const FirstForm: React.FC<FirstFormProps> = ({ setActiveStep }) => {
         </Heading>
       </HStack>
       {createAssetInputs().map((input, idx) => (
-        <AuthInput
-          key={idx}
-          isFlexed
-          control={control}
-          name={input.name}
-          mb={4}
-          autoComplete={"none"}
-          placeholder={input.placeholder}
-          isIconComponent
-          label={input.label}
-          type={input.type}
-          bg={"transparent"}
-          isPassword={input.type === "password"}
-          isRequired={input.isRequired}
-          rules={{
-            required: input.rule,
-            minLength: {
-              value: input.minLength,
-              message: input.message,
-            },
-          }}
-        />
+        <Flex gap={"6px"}>
+          <AuthInput
+            key={idx}
+            isFlexed
+            control={control}
+            name={input.name}
+            mb={4}
+            autoComplete={"none"}
+            placeholder={input.placeholder}
+            isIconComponent
+            label={input.label}
+            type={input.type}
+            bg={"transparent"}
+            isPassword={input.type === "password"}
+            isRequired={input.isRequired}
+            rules={{
+              required: input.rule,
+              minLength: {
+                value: input.minLength,
+                message: input.message,
+              },
+            }}
+          />
+          {input.addNew &&
+            (typeof input.addNew === "string" ? (
+              <Button variant={"outline"}>{input.addNew}</Button>
+            ) : (
+              <IconButton
+                variant={"outline"}
+                icon={<input.addNew />}
+                aria-label="add-new"
+              />
+            ))}
+        </Flex>
       ))}
       <HStack justifyContent={"space-between"} mt={"24px"}>
         <Spacer />

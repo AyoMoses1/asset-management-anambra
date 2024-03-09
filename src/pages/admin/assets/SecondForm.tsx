@@ -10,6 +10,7 @@ import {
   Flex,
   HStack,
   Heading,
+  IconButton,
 } from "@chakra-ui/react";
 import AuthInput from "components/common/AuthInput";
 import { CheckIcon } from "icons";
@@ -63,29 +64,40 @@ const SecondForm: React.FC<SecondFormProps> = ({ setActiveStep }) => {
               </AccordionButton>
               <AccordionPanel pb={4}>
                 {createAssetInputsTwo().map((input, idx) => (
-                  <AuthInput
-                    key={idx}
-                    isFlexed
-                    control={control}
-                    name={input.name}
-                    mb={4}
-                    autoComplete={"none"}
-                    rightElement={input.rightElement}
-                    placeholder={input.placeholder}
-                    isIconComponent
-                    label={input.label}
-                    type={input.type}
-                    bg={"transparent"}
-                    isPassword={input.type === "password"}
-                    isRequired={input.isRequired}
-                    rules={{
-                      required: input.rule,
-                      minLength: {
-                        value: input.minLength,
-                        message: input.message,
-                      },
-                    }}
-                  />
+                  <Flex gap={"6px"}>
+                    <AuthInput
+                      key={idx}
+                      isFlexed
+                      control={control}
+                      name={input.name}
+                      mb={4}
+                      autoComplete={"none"}
+                      placeholder={input.placeholder}
+                      isIconComponent
+                      label={input.label}
+                      type={input.type}
+                      bg={"transparent"}
+                      isPassword={input.type === "password"}
+                      isRequired={input.isRequired}
+                      rules={{
+                        required: input.rule,
+                        minLength: {
+                          value: input.minLength,
+                          message: input.message,
+                        },
+                      }}
+                    />
+                    {input.addNew &&
+                      (typeof input.addNew === "string" ? (
+                        <Button variant={"outline"}>{input.addNew}</Button>
+                      ) : (
+                        <IconButton
+                          variant={"outline"}
+                          icon={<input.addNew />}
+                          aria-label="add-new"
+                        />
+                      ))}
+                  </Flex>
                 ))}
               </AccordionPanel>
             </>
@@ -106,29 +118,40 @@ const SecondForm: React.FC<SecondFormProps> = ({ setActiveStep }) => {
               </AccordionButton>
               <AccordionPanel pb={4}>
                 {createAssetInputsThree().map((input, idx) => (
-                  <AuthInput
-                    key={idx}
-                    isFlexed
-                    control={control}
-                    name={input.name}
-                    mb={4}
-                    autoComplete={"none"}
-                    rightElement={input.rightElement}
-                    placeholder={input.placeholder}
-                    isIconComponent
-                    label={input.label}
-                    type={input.type}
-                    bg={"transparent"}
-                    isPassword={input.type === "password"}
-                    isRequired={input.isRequired}
-                    rules={{
-                      required: input.rule,
-                      minLength: {
-                        value: input.minLength,
-                        message: input.message,
-                      },
-                    }}
-                  />
+                  <Flex gap={"6px"}>
+                    <AuthInput
+                      key={idx}
+                      isFlexed
+                      control={control}
+                      name={input.name}
+                      mb={4}
+                      autoComplete={"none"}
+                      placeholder={input.placeholder}
+                      isIconComponent
+                      label={input.label}
+                      type={input.type}
+                      bg={"transparent"}
+                      isPassword={input.type === "password"}
+                      isRequired={input.isRequired}
+                      rules={{
+                        required: input.rule,
+                        minLength: {
+                          value: input.minLength,
+                          message: input.message,
+                        },
+                      }}
+                    />
+                    {input.addNew &&
+                      (typeof input.addNew === "string" ? (
+                        <Button variant={"outline"}>{input.addNew}</Button>
+                      ) : (
+                        <IconButton
+                          variant={"outline"}
+                          icon={<input.addNew />}
+                          aria-label="add-new"
+                        />
+                      ))}
+                  </Flex>
                 ))}
               </AccordionPanel>
             </>

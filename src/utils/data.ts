@@ -38,6 +38,7 @@ import {
   MaximiseIcon,
   RefreshIcon,
 } from "icons";
+import { AddIcon, MinusIcon } from "@chakra-ui/icons";
 
 export const loginInputs = (): AuthInput[] => {
   return [
@@ -113,6 +114,7 @@ export const createAssetInputs = (): AuthInput[] => {
       rule: "Please enter a tag",
       isRequired: true,
       type: "number",
+      addNew: AddIcon,
     },
     {
       name: "serial",
@@ -126,6 +128,7 @@ export const createAssetInputs = (): AuthInput[] => {
       rule: "Please enter a second tag",
       isRequired: true,
       type: "number",
+      addNew: MinusIcon,
     },
     {
       name: "serial2",
@@ -140,6 +143,7 @@ export const createAssetInputs = (): AuthInput[] => {
       placeholder: "Select a Model",
       isRequired: true,
       type: "select",
+      addNew: "New",
     },
     {
       name: "status",
@@ -148,6 +152,7 @@ export const createAssetInputs = (): AuthInput[] => {
       placeholder: "Select Status",
       isRequired: true,
       type: "select",
+      addNew: "New",
     },
     {
       name: "notes",
@@ -163,6 +168,7 @@ export const createAssetInputs = (): AuthInput[] => {
       placeholder: "Select a Location",
       isRequired: true,
       type: "select",
+      addNew: "New",
     },
     {
       name: "requestable",
@@ -234,6 +240,7 @@ export const createAssetInputsThree = (): AuthInput[] => {
         { name: "sssssss", value: 444 },
       ],
       type: "select",
+      addNew: "New",
     },
     {
       name: "purchaseCost",

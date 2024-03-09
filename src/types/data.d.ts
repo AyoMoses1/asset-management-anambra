@@ -15,6 +15,7 @@ type AuthInput = {
   placeholder?: string;
   isRequired: boolean;
   type: string;
+  addNew?: IconType | string;
   rightElement?: string;
   data?:  T[]
 };
