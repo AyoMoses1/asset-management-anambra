@@ -183,67 +183,62 @@ export const createAssetInputs = (): AuthInput[] => {
 export const createAssetInputsTwo = (): AuthInput[] => {
   return [
     {
-      name: "mds",
-      label: "MDA",
-      isRequired: false,
-      type: "select",
-    },
-    {
-      name: "tag1",
-      label: "Asset Tag",
-      rule: "Please enter a tag",
-      isRequired: true,
-      type: "number",
-    },
-    {
-      name: "serial",
-      label: "Serial",
+      name: "name",
+      label: "Asset Name",
       isRequired: false,
       type: "text",
     },
     {
-      name: "tag2",
-      label: "Asset Tag 2",
-      rule: "Please enter a second tag",
-      isRequired: true,
+      name: "warranty",
+      label: "Warranty",
+      isRequired: false,
       type: "number",
     },
     {
-      name: "serial2",
-      label: "Serial 2",
+      name: "byod",
+      label: "BYOD (This device is owned by the user)",
       isRequired: false,
-      type: "text",
+      type: "checkbox",
     },
+  ];
+};
+
+export const createAssetInputsThree = (): AuthInput[] => {
+  return [
     {
-      name: "model",
-      label: "Model",
-      rule: "Please select a model",
-      placeholder: "Select a Model",
-      isRequired: true,
-      type: "select",
-    },
-    {
-      name: "status",
-      label: "Status",
-      rule: "Please select a second tag",
-      placeholder: "Select Status",
-      isRequired: true,
-      type: "select",
-    },
-    {
-      name: "notes",
-      label: "Notes",
-      placeholder: "Enter note here...",
+      name: "orderNumber",
+      label: "Order Number",
       isRequired: false,
-      type: "textarea",
+      type: "number",
     },
     {
-      name: "location",
-      label: "Default Location",
-      rule: "Please select a location",
-      placeholder: "Select a Location",
-      isRequired: true,
+      name: "purchaseDate",
+      label: "Purchase Date",
+      isRequired: false,
+      type: "date",
+    },
+    {
+      name: "eolDate",
+      label: "EOL Date",
+      isRequired: false,
+      type: "date",
+    },
+    {
+      name: "supplier",
+      label: "Supplier",
+      placeholder: "Select a Supplier",
+      isRequired: false,
+      data: [
+        { name: "sssssss", value: 444 },
+        { name: "sssssss", value: 444 },
+      ],
       type: "select",
+    },
+    {
+      name: "purchaseCost",
+      label: "Purchase Cost",
+      isRequired: false,
+      type: "number",
     },
   ];
 };

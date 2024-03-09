@@ -36,6 +36,7 @@ interface AuthInputProps extends InputProps {
   isIconComponent?: boolean;
   name: string;
   rules?: any;
+  width?: string;
   isFlexed?: boolean;
   includePasswordIcon?: boolean;
   isPassword?: boolean;
@@ -250,6 +251,7 @@ const AuthInput: React.FC<AuthInputProps> = ({
             type={isPassword ? (isOpen ? "text" : "password") : type}
             isDisabled={isDisabled}
             {...field}
+            width={type === "date" ? "204px" : "100%"}
           />
         </InputGroup>
         {Boolean(error) && (

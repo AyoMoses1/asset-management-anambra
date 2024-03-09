@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from "react";
-import { Box, Button, HStack, Spacer } from "@chakra-ui/react";
+import { Box, Button, HStack, Heading, Spacer } from "@chakra-ui/react";
 import AuthInput from "components/common/AuthInput";
 import { BORDER_LIGHT } from "utils/color";
 import { createAssetInputs } from "utils/data";
@@ -23,6 +23,15 @@ const FirstForm: React.FC<FirstFormProps> = ({ setActiveStep }) => {
       borderColor={BORDER_LIGHT}
       borderRadius={"8px"}
     >
+      <HStack justifyContent={"space-between"} mb={"24px"}>
+        <Heading variant={"h5Small"} textTransform={"uppercase"}>
+          Asset Tag
+        </Heading>
+
+        <Heading variant={"h5Small"} textTransform={"uppercase"}>
+          1/2
+        </Heading>
+      </HStack>
       {createAssetInputs().map((input, idx) => (
         <AuthInput
           key={idx}
@@ -48,7 +57,7 @@ const FirstForm: React.FC<FirstFormProps> = ({ setActiveStep }) => {
         />
       ))}
       <HStack justifyContent={"space-between"} mt={"24px"}>
-        <Spacer/>
+        <Spacer />
         <Button
           onClick={() => setActiveStep((prev: number) => prev + 1)}
           rightIcon={<ChevronRightIcon />}
