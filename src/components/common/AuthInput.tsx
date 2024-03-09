@@ -16,6 +16,10 @@ import {
   IconProps,
   Flex,
   Box,
+  Button,
+  Stack,
+  Checkbox,
+  Text,
 } from "@chakra-ui/react";
 import React, { ComponentProps } from "react";
 import { useController } from "react-hook-form";
@@ -23,6 +27,7 @@ import { IconType } from "react-icons";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 import Select from "react-select";
 import CustomSelect from "./CustomSelect";
+import { TEXT_PRIMARY } from "utils/color";
 
 interface AuthInputProps extends InputProps {
   label?: string;
@@ -34,6 +39,7 @@ interface AuthInputProps extends InputProps {
   isFlexed?: boolean;
   includePasswordIcon?: boolean;
   isPassword?: boolean;
+  type?: string;
   iconProp?: IconProps;
   isSelect?: boolean;
   labelStyles?: FormLabelProps;
@@ -60,6 +66,7 @@ const AuthInput: React.FC<AuthInputProps> = ({
   Icon,
   isDisabled,
   isRequired,
+  type,
   // onChange,
   ...rest
 }) => {
@@ -76,6 +83,62 @@ const AuthInput: React.FC<AuthInputProps> = ({
 
   const { isOpen, onToggle } = useDisclosure();
 
+  if (type === "checkbox")
+    return (
+      <Stack spacing={5} direction="row" pl={"25%"} mb={"24px"}>
+        <Checkbox>
+          <Text fontWeight={"600"} color={TEXT_PRIMARY} fontSize={"16px"}>
+            {label}
+          </Text>
+        </Checkbox>
+      </Stack>
+    );
+
+  if (type === "file")
+    return (
+      <FormControl
+        isInvalid={Boolean(error)}
+        display={isFlexed ? "flex" : ""}
+        gap={isFlexed ? "24px" : ""}
+        alignItems={"center"}
+        justifyContent={"start"}
+      >
+        {label && (
+          <FormLabel
+            color={`text.primary`}
+            fontSize={"16px"}
+            mb={1}
+            fontWeight={"600"}
+            htmlFor="file-upload"
+            {...labelStyles}
+            fontFamily={"'IBM Plex Sans', sans"}
+            {...labelStyles}
+            display={"flex"}
+            w={"100%"}
+            gap={"45px"}
+          >
+            <Box w={"20%"} display={"flex"} justifyContent={"end"}>
+              {label}
+            </Box>
+            <Button as="span" variant={"outline"} cursor={"pointer"}>
+              Select File...
+            </Button>
+            <Input
+              {...rest}
+              id={"file-upload"}
+              type={type}
+              isDisabled={isDisabled}
+              {...field}
+              placeholder="select ing"
+              style={{ display: "none" }}
+            />
+          </FormLabel>
+        )}
+        {Boolean(error) && (
+          <FormErrorMessage fontSize={"xs"}>{error?.message}</FormErrorMessage>
+        )}
+      </FormControl>
+    );
   if (isSelect)
     return (
       <FormControl
@@ -184,7 +247,7 @@ const AuthInput: React.FC<AuthInputProps> = ({
           )}
           <Input
             {...rest}
-            type={isPassword ? (isOpen ? "text" : "password") : rest.type}
+            type={isPassword ? (isOpen ? "text" : "password") : type}
             isDisabled={isDisabled}
             {...field}
           />
@@ -261,7 +324,7 @@ const AuthInput: React.FC<AuthInputProps> = ({
         )}
         <Input
           {...rest}
-          type={isPassword ? (isOpen ? "text" : "password") : rest.type}
+          type={isPassword ? (isOpen ? "text" : "password") : type}
           isDisabled={isDisabled}
           {...field}
         />

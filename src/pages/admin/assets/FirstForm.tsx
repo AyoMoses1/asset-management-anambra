@@ -34,6 +34,7 @@ const FirstForm: React.FC<FirstFormProps> = ({ setActiveStep }) => {
           placeholder={input.placeholder}
           isIconComponent
           label={input.label}
+          type={input.type}
           bg={"transparent"}
           isPassword={input.type === "password"}
           isRequired={input.isRequired}

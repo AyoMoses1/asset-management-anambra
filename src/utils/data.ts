@@ -174,7 +174,7 @@ export const createAssetInputs = (): AuthInput[] => {
       name: "user",
       label: "User",
       placeholder: "Select a file",
-      isRequired: true,
+      isRequired: false,
       type: "file",
     },
   ];
