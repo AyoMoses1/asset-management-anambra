@@ -27,7 +27,7 @@ import { IconType } from "react-icons";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 import Select from "react-select";
 import CustomSelect from "./CustomSelect";
-import { TEXT_PRIMARY } from "utils/color";
+import { TEXT_PRIMARY, TINT_GREY } from "utils/color";
 
 interface AuthInputProps extends InputProps {
   label?: string;
@@ -45,6 +45,7 @@ interface AuthInputProps extends InputProps {
   isSelect?: boolean;
   labelStyles?: FormLabelProps;
   isDisabled?: boolean;
+  rightElement?: string;
   data?: { label: string; value: string | number }[];
   selectProps?: ComponentProps<Select> & { isCreatable?: boolean };
 }
@@ -68,6 +69,7 @@ const AuthInput: React.FC<AuthInputProps> = ({
   isDisabled,
   isRequired,
   type,
+  rightElement,
   // onChange,
   ...rest
 }) => {
@@ -226,7 +228,16 @@ const AuthInput: React.FC<AuthInputProps> = ({
               )}
             </InputLeftElement>
           )}
-
+          {rightElement && (
+            <InputRightElement
+              bg={TINT_GREY}
+              display={"flex"}
+              alignItems={"center"}
+              px={12}
+            >
+              {rightElement}
+            </InputRightElement>
+          )}
           {isPassword && includePasswordIcon && (
             <InputRightElement
               variant={"link"}

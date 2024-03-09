@@ -193,6 +193,7 @@ export const createAssetInputsTwo = (): AuthInput[] => {
       label: "Warranty",
       isRequired: false,
       type: "number",
+      rightElement: "months",
     },
     {
       name: "byod",
@@ -239,6 +240,7 @@ export const createAssetInputsThree = (): AuthInput[] => {
       label: "Purchase Cost",
       isRequired: false,
       type: "number",
+      rightElement: "NGN",
     },
   ];
 };

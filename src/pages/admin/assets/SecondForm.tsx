@@ -70,6 +70,7 @@ const SecondForm: React.FC<SecondFormProps> = ({ setActiveStep }) => {
                     name={input.name}
                     mb={4}
                     autoComplete={"none"}
+                    rightElement={input.rightElement}
                     placeholder={input.placeholder}
                     isIconComponent
                     label={input.label}
@@ -112,6 +113,7 @@ const SecondForm: React.FC<SecondFormProps> = ({ setActiveStep }) => {
                     name={input.name}
                     mb={4}
                     autoComplete={"none"}
+                    rightElement={input.rightElement}
                     placeholder={input.placeholder}
                     isIconComponent
                     label={input.label}
