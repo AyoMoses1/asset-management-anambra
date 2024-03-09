@@ -8,12 +8,15 @@ import {
   Heading,
   IconButton,
   Spacer,
+  useDisclosure,
 } from "@chakra-ui/react";
 import AuthInput from "components/common/AuthInput";
 import { BORDER_LIGHT } from "utils/color";
-import { createAssetInputs } from "utils/data";
+import { assetModelInputs, createAssetInputs } from "utils/data";
 import { useForm } from "react-hook-form";
 import { ChevronRightIcon } from "@chakra-ui/icons";
+import ModalComponent from "components/modals/FormModal";
+import { CheckIcon } from "icons";
 
 interface FirstFormProps {
   setActiveStep: (no: any) => void;
@@ -22,6 +25,8 @@ interface FirstFormProps {
 
 const FirstForm: React.FC<FirstFormProps> = ({ setActiveStep }) => {
   const { control } = useForm();
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <Box
       bg={"white"}
@@ -66,11 +71,14 @@ const FirstForm: React.FC<FirstFormProps> = ({ setActiveStep }) => {
           />
           {input.addNew &&
             (typeof input.addNew === "string" ? (
-              <Button variant={"outline"}>{input.addNew}</Button>
+              <Button variant={"outline"} onClick={onOpen}>
+                {input.addNew}
+              </Button>
             ) : (
               <IconButton
                 variant={"outline"}
                 icon={<input.addNew />}
+                onClick={onOpen}
                 aria-label="add-new"
               />
             ))}
@@ -86,6 +94,42 @@ const FirstForm: React.FC<FirstFormProps> = ({ setActiveStep }) => {
           Next
         </Button>
       </HStack>
+      <ModalComponent
+        onClose={onClose}
+        isOpen={isOpen}
+        size="3xl"
+        title="Create Asset Model"
+      >
+        {assetModelInputs().map((input, idx) => (
+          <AuthInput
+            key={idx}
+            isFlexed
+            control={control}
+            name={input.name}
+            autoComplete={"none"}
+            placeholder={input.placeholder}
+            isIconComponent
+            label={input.label}
+            type={input.type}
+            bg={"transparent"}
+            isPassword={input.type === "password"}
+            isRequired={input.isRequired}
+            rules={{
+              required: input.rule,
+              minLength: {
+                value: input.minLength,
+                message: input.message,
+              },
+            }}
+          />
+        ))}
+        <Flex gap={"8px"} justifyContent={"flex-end"}>
+          <Button variant={"outline"} onClick={onClose}>
+            Cancel
+          </Button>
+          <Button leftIcon={<CheckIcon />}>Save</Button>
+        </Flex>
+      </ModalComponent>
     </Box>
   );
 };
