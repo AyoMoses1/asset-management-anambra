@@ -6,7 +6,6 @@ import {
   Flex,
   HStack,
   Heading,
-  IconButton,
   Spacer,
   useDisclosure,
 } from "@chakra-ui/react";
@@ -26,6 +25,7 @@ interface FirstFormProps {
 const FirstForm: React.FC<FirstFormProps> = ({ setActiveStep }) => {
   const { control } = useForm();
   const { isOpen, onOpen, onClose } = useDisclosure();
+  console.log({ onOpen });
 
   return (
     <Box
@@ -58,6 +58,7 @@ const FirstForm: React.FC<FirstFormProps> = ({ setActiveStep }) => {
             isIconComponent
             label={input.label}
             type={input.type}
+            addNew={input.addNew}
             bg={"transparent"}
             isPassword={input.type === "password"}
             isRequired={input.isRequired}
@@ -69,7 +70,7 @@ const FirstForm: React.FC<FirstFormProps> = ({ setActiveStep }) => {
               },
             }}
           />
-          {input.addNew &&
+          {/* {input.addNew &&
             (typeof input.addNew === "string" ? (
               <Button variant={"outline"} onClick={onOpen}>
                 {input.addNew}
@@ -81,7 +82,7 @@ const FirstForm: React.FC<FirstFormProps> = ({ setActiveStep }) => {
                 onClick={onOpen}
                 aria-label="add-new"
               />
-            ))}
+            ))} */}
         </Flex>
       ))}
       <HStack justifyContent={"space-between"} mt={"24px"}>

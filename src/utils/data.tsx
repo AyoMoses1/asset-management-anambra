@@ -114,7 +114,7 @@ export const createAssetInputs = (): AuthInput[] => {
       rule: "Please enter a tag",
       isRequired: true,
       type: "number",
-      addNew: AddIcon,
+      addNew: <AddIcon />,
     },
     {
       name: "serial",
@@ -128,7 +128,7 @@ export const createAssetInputs = (): AuthInput[] => {
       rule: "Please enter a second tag",
       isRequired: true,
       type: "number",
-      addNew: MinusIcon,
+      addNew: <MinusIcon />,
     },
     {
       name: "serial2",
@@ -182,6 +182,52 @@ export const createAssetInputs = (): AuthInput[] => {
       placeholder: "Select a file",
       isRequired: false,
       type: "file",
+    },
+  ];
+};
+
+export const checkoutAssetInputs = (): AuthInput[] => {
+  return [
+    {
+      name: "user",
+      label: "User",
+      rule: "Please select a user",
+      isRequired: true,
+      type: "select",
+      addNew: "Create New",
+      data: [
+        { name: "sssssss", value: 444 },
+        { name: "sssssss", value: 444 },
+      ],
+    },
+    {
+      name: "asset",
+      label: "Asset",
+      rule: "Please select an asset",
+      isRequired: false,
+      type: "select",
+      data: [
+        { name: "sssssss", value: 444 },
+        { name: "sssssss", value: 444 },
+      ],
+    },
+    {
+      name: "checkoutDate",
+      label: "Checkout Date",
+      isRequired: false,
+      type: "date",
+    },
+    {
+      name: "checkinDate",
+      label: "Expected CheckIn Date",
+      isRequired: false,
+      type: "date",
+    },
+    {
+      name: "details",
+      label: "Details",
+      isRequired: false,
+      type: "textarea",
     },
   ];
 };
