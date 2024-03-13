@@ -14,7 +14,7 @@ import {
 } from "@chakra-ui/react";
 import AuthInput from "components/common/AuthInput";
 import DashboardLayout from "layouts/DashboardLayout";
-import { BORDER_LIGHT, TINT_YELLOW } from "utils/color";
+import { BORDER_LIGHT, ICON_DARK, TINT_YELLOW } from "utils/color";
 import {
   assetModelInputs,
   checkoutAssetInputs,
@@ -22,17 +22,19 @@ import {
   checkoutAssetInputsTwo,
 } from "utils/data";
 import ModalComponent from "components/modals/FormModal";
-import { AssetsIcon, CheckIcon, UsersIcon } from "icons";
+import { CheckIcon } from "icons";
 import { useForm } from "react-hook-form";
-import { BsMarkerTip } from "react-icons/bs";
+import { BiUser } from "react-icons/bi";
+import { IoLocation } from "react-icons/io5";
+import {  BsBox2 } from "react-icons/bs";
 
 const Checkout = () => {
   const { control } = useForm();
   const { isOpen, onOpen, onClose } = useDisclosure();
   const tabs = [
-    { name: "user", icon: UsersIcon },
-    { name: "asset", icon: AssetsIcon },
-    { name: "location", icon: BsMarkerTip },
+    { name: "user", icon: BiUser },
+    { name: "asset", icon: BsBox2 },
+    { name: "location", icon: IoLocation },
   ];
 
   console.log({ onOpen });
@@ -75,7 +77,7 @@ const Checkout = () => {
                     py={"6px"}
                     _selected={{ bg: TINT_YELLOW }}
                   >
-                    <tab.icon />
+                    <tab.icon color={ICON_DARK} />
                     {tab.name}
                   </Tab>
                 ))}
