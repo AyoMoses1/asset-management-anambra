@@ -11,6 +11,7 @@ import Assets from "pages/admin/assets";
 import CreateNewAsset from "pages/admin/assets/CreateNew";
 import AssetCheckout from "pages/admin/assets/Checkout"
 import AssetHistory from "pages/admin/assets/History"
+import ViewAsset from "pages/admin/assets/ViewAsset";
 
 export default [
   {
@@ -65,6 +66,11 @@ export default [
   {
     path: "/dashboard/licenses",
     element: <User />,
+    name: "User Panel",
+  },
+  {
+    path: "/dashboard/assets/:id",
+    element: <ViewAsset />,
     name: "User Panel",
   },
   {
