@@ -26,7 +26,7 @@ import { CheckIcon } from "icons";
 import { useForm } from "react-hook-form";
 import { BiUser } from "react-icons/bi";
 import { IoLocation } from "react-icons/io5";
-import {  BsBox2 } from "react-icons/bs";
+import { BsBox2 } from "react-icons/bs";
 
 const Checkout = () => {
   const { control } = useForm();

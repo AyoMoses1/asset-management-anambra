@@ -3,11 +3,22 @@ import InfoCard from "./InfoCard";
 
 const Info = () => {
   const profile = {
-    name: "Ayo Moses",
-    username: "Testser",
-    email: "ayomoses111@gmail.com",
-    lastLogin: "8927439220-44",
-    createdAt: "2024-02-01 (0 years, 0 months and 19 days)",
+    status: "Archived",
+    mda: "ANAMBRA MDA",
+    assetName: "Office mouse",
+    serial: "9874nv93745b3",
+    category: "Office Equipment",
+    model: "Input Devices",
+    modelNo: "8927439220-44",
+    byod: "Yes",
+    purchaseDate: "2024-02-01 - 0 years, 0 months and 19 days",
+    purchaseCost: "5,000.00",
+    orderNumber: "#974395393847",
+    supplier: "Logitech",
+    warranty: "6 months",
+    warrantyExpires: "2024-08-01 -- 6 months 2 weeks from now",
+    eolRate: "0 months",
+    eolDate: "2024-08-01 -- 6 months 2 weeks from now ",
   };
 
   return (
@@ -15,6 +26,7 @@ const Info = () => {
       style={{ padding: "0px !important" }}
       textAlign={"start"}
       justifyContent={"space-between"}
+      alignItems={"center"}
     >
       <Box width={"60%"}>
         {Object.entries(profile).map(([key, value]) => (

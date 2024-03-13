@@ -11,7 +11,16 @@ import Info from "./Info";
 import Assets from "./Assets";
 
 const TabComponent = () => {
-  const tabs = ["Info", "Assets", "Licenses", "Accessories", "Consumables"];
+  const tabs = [
+    "Info",
+    "Assets",
+    "Licenses",
+    "Accessories",
+    "Consumables",
+    "File Uploads",
+    "History",
+    "Merged",
+  ];
   return (
     <Tabs
       position="relative"
