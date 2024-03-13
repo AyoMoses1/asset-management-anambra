@@ -1,5 +1,18 @@
 export default {
   colors: {
+    brand: {
+      "50": "#FFC334",
+      "100": "#FFC334",
+      "200": "#FFC334",
+      "300": "#FFC334",
+      "400": "#FFC334",
+      "500": "#FFC334",
+      "600": "#FFC334",
+      "700": "#FFC334",
+      "800": "#FFC334",
+      "900": "#FFC334",
+    },
+
     main: {
       red: "#EF4444",
       yellow: "#FFC334",
@@ -28,7 +41,7 @@ export default {
       dark: "#1C1C1C",
     },
     others: {
-      white: "#ffffff"
-    }
+      white: "#ffffff",
+    },
   },
 };

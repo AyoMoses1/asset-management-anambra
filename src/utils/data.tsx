@@ -719,3 +719,11 @@ export const tableFilters = () => [
     ariaLabel: "Export Icon",
   },
 ];
+
+export const historyChecks = [
+  "Try to match users by firstname.lastname (jane.smith) format",
+  "Try to match users by first initial last name (jsmith) format",
+  "Try to match users by first name (jane) format",
+  "Try to match users by email as username",
+  "Try to match users by username",
+];

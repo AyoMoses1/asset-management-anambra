@@ -10,6 +10,7 @@ import AdminDashboard from "pages/admin/dashboard";
 import Assets from "pages/admin/assets";
 import CreateNewAsset from "pages/admin/assets/CreateNew";
 import AssetCheckout from "pages/admin/assets/Checkout"
+import AssetHistory from "pages/admin/assets/History"
 
 export default [
   {
@@ -74,6 +75,11 @@ export default [
   {
     path: "/dashboard/assets/checkout",
     element: <AssetCheckout />,
+    name: "User Panel",
+  },
+  {
+    path: "/dashboard/assets/history",
+    element: <AssetHistory />,
     name: "User Panel",
   },
   {

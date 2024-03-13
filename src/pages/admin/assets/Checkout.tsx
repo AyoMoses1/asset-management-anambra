@@ -40,7 +40,7 @@ const Checkout = () => {
   return (
     <DashboardLayout>
       <Stack>
-        <Heading variant={"h5Small"}>Checkout Assets</Heading>
+        <Heading variant={"h3Small"}>Checkout Assets</Heading>
         <Box
           bg={"white"}
           p={"24px"}
