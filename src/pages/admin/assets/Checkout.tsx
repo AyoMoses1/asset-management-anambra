@@ -1,28 +1,41 @@
-import { ChevronRightIcon } from "@chakra-ui/icons";
 import {
   Box,
   Button,
   Flex,
-  HStack,
   Heading,
-  Spacer,
   Stack,
+  Tab,
+  TabList,
+  TabPanel,
+  TabPanels,
+  Tabs,
+  Text,
   useDisclosure,
 } from "@chakra-ui/react";
 import AuthInput from "components/common/AuthInput";
 import DashboardLayout from "layouts/DashboardLayout";
 import { BORDER_LIGHT } from "utils/color";
-import { assetModelInputs, checkoutAssetInputs } from "utils/data";
+import {
+  assetModelInputs,
+  checkoutAssetInputs,
+  checkoutAssetInputsThree,
+  checkoutAssetInputsTwo,
+} from "utils/data";
 import ModalComponent from "components/modals/FormModal";
-import { CheckIcon } from "icons";
+import { AssetsIcon, CheckIcon, UsersIcon } from "icons";
 import { useForm } from "react-hook-form";
-import { useState } from "react";
+import { BsMarkerTip } from "react-icons/bs";
 
 const Checkout = () => {
   const { control } = useForm();
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const [activeStep, setActiveStep] = useState(0);
-  console.log({ activeStep, onOpen });
+  const tabs = [
+    { name: "user", icon: UsersIcon },
+    { name: "asset", icon: AssetsIcon },
+    { name: "location", icon: BsMarkerTip },
+  ];
+
+  console.log({ onOpen });
 
   return (
     <DashboardLayout>
@@ -39,45 +52,137 @@ const Checkout = () => {
           <Heading variant={"h5Small"} textTransform={"uppercase"} mb={"24px"}>
             Asset Tag
           </Heading>
-          {checkoutAssetInputs().map((input, idx) => (
-            <Flex gap={"6px"} w={"100%"}>
-              <AuthInput
-                key={idx}
-                isFlexed
-                control={control}
-                name={input.name}
-                addNew={input.addNew}
-                mb={4}
-                autoComplete={"none"}
-                placeholder={input.placeholder}
-                isIconComponent
-                label={input.label}
-                type={input.type}
-                data={input.data}
-                bg={"transparent"}
-                isSelect={input.type === "select"}
-                isPassword={input.type === "password"}
-                isRequired={input.isRequired}
-                rules={{
-                  required: input.rule,
-                  minLength: {
-                    value: input.minLength,
-                    message: input.message,
-                  },
-                }}
-              />
+          <Tabs variant="soft-rounded" colorScheme="orange" mb={4}>
+            <Flex gap={6} alignItems={"center"} ml={5}>
+              <Text
+                variant={"small"}
+                fontSize={16}
+                fontWeight={600}
+                textAlign={"end"}
+              >
+                Checkout destination
+              </Text>
+              <TabList
+                border={`1px solid ${BORDER_LIGHT}`}
+                borderRadius={"50px"}
+                p={"4px"}
+              >
+                {tabs.map((tab) => (
+                  <Tab
+                    textTransform={"capitalize"}
+                    gap={"6px"}
+                    px={"22.5px"}
+                    py={"6px"}
+                  >
+                    <tab.icon />
+                    {tab.name}
+                  </Tab>
+                ))}
+              </TabList>
             </Flex>
-          ))}
-          <HStack justifyContent={"space-between"} mt={"24px"}>
-            <Spacer />
-            <Button
-              onClick={() => setActiveStep((prev: number) => prev + 1)}
-              rightIcon={<ChevronRightIcon />}
-              variant={"outline"}
-            >
-              Next
+            <TabPanels>
+              <TabPanel>
+                {checkoutAssetInputs().map((input, idx) => (
+                  <Flex gap={"6px"} w={"100%"}>
+                    <AuthInput
+                      key={idx}
+                      isFlexed
+                      control={control}
+                      name={input.name}
+                      addNew={input.addNew}
+                      mb={4}
+                      autoComplete={"none"}
+                      placeholder={input.placeholder}
+                      isIconComponent
+                      label={input.label}
+                      type={input.type}
+                      data={input.data}
+                      bg={"transparent"}
+                      isSelect={input.type === "select"}
+                      isPassword={input.type === "password"}
+                      isRequired={input.isRequired}
+                      rules={{
+                        required: input.rule,
+                        minLength: {
+                          value: input.minLength,
+                          message: input.message,
+                        },
+                      }}
+                    />
+                  </Flex>
+                ))}
+              </TabPanel>
+              <TabPanel>
+                {checkoutAssetInputsTwo().map((input, idx) => (
+                  <Flex gap={"6px"} w={"100%"}>
+                    <AuthInput
+                      key={idx}
+                      isFlexed
+                      control={control}
+                      name={input.name}
+                      addNew={input.addNew}
+                      mb={4}
+                      autoComplete={"none"}
+                      placeholder={input.placeholder}
+                      isIconComponent
+                      label={input.label}
+                      type={input.type}
+                      data={input.data}
+                      bg={"transparent"}
+                      isSelect={input.type === "select"}
+                      isPassword={input.type === "password"}
+                      isRequired={input.isRequired}
+                      rules={{
+                        required: input.rule,
+                        minLength: {
+                          value: input.minLength,
+                          message: input.message,
+                        },
+                      }}
+                    />
+                  </Flex>
+                ))}
+              </TabPanel>
+              <TabPanel>
+                {checkoutAssetInputsThree().map((input, idx) => (
+                  <Flex gap={"6px"} w={"100%"}>
+                    <AuthInput
+                      key={idx}
+                      isFlexed
+                      control={control}
+                      name={input.name}
+                      addNew={input.addNew}
+                      mb={4}
+                      autoComplete={"none"}
+                      placeholder={input.placeholder}
+                      isIconComponent
+                      label={input.label}
+                      type={input.type}
+                      data={input.data}
+                      bg={"transparent"}
+                      isSelect={input.type === "select"}
+                      isPassword={input.type === "password"}
+                      isRequired={input.isRequired}
+                      rules={{
+                        required: input.rule,
+                        minLength: {
+                          value: input.minLength,
+                          message: input.message,
+                        },
+                      }}
+                    />
+                  </Flex>
+                ))}
+              </TabPanel>
+            </TabPanels>
+          </Tabs>
+
+          <Flex gap={"8px"} justifyContent={"space-between"} mt={"24px"}>
+            <Button variant={"outline"} onClick={onClose}>
+              Cancel
             </Button>
-          </HStack>
+            <Button leftIcon={<CheckIcon />}>Checkout</Button>
+          </Flex>
           <ModalComponent
             onClose={onClose}
             isOpen={isOpen}

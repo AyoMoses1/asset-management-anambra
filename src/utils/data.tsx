@@ -232,6 +232,98 @@ export const checkoutAssetInputs = (): AuthInput[] => {
   ];
 };
 
+export const checkoutAssetInputsTwo = (): AuthInput[] => {
+  return [
+    {
+      name: "asset",
+      label: "Asset",
+      rule: "Please select an asset",
+      isRequired: true,
+      type: "select",
+      addNew: "Create New",
+      data: [
+        { name: "sssssss", value: 444 },
+        { name: "sssssss", value: 444 },
+      ],
+    },
+    {
+      name: "asset",
+      label: "Asset",
+      rule: "Please select an asset",
+      isRequired: false,
+      type: "select",
+      data: [
+        { name: "sssssss", value: 444 },
+        { name: "sssssss", value: 444 },
+      ],
+    },
+    {
+      name: "checkoutDate",
+      label: "Checkout Date",
+      isRequired: false,
+      type: "date",
+    },
+    {
+      name: "checkinDate",
+      label: "Expected CheckIn Date",
+      isRequired: false,
+      type: "date",
+    },
+    {
+      name: "details",
+      label: "Details",
+      isRequired: false,
+      type: "textarea",
+    },
+  ];
+};
+
+export const checkoutAssetInputsThree = (): AuthInput[] => {
+  return [
+    {
+      name: "location",
+      label: "Location",
+      rule: "Please select a location",
+      isRequired: true,
+      type: "select",
+      addNew: "Create New",
+      data: [
+        { name: "sssssss", value: 444 },
+        { name: "sssssss", value: 444 },
+      ],
+    },
+    {
+      name: "asset",
+      label: "Asset",
+      rule: "Please select an asset",
+      isRequired: false,
+      type: "select",
+      data: [
+        { name: "sssssss", value: 444 },
+        { name: "sssssss", value: 444 },
+      ],
+    },
+    {
+      name: "checkoutDate",
+      label: "Checkout Date",
+      isRequired: false,
+      type: "date",
+    },
+    {
+      name: "checkinDate",
+      label: "Expected CheckIn Date",
+      isRequired: false,
+      type: "date",
+    },
+    {
+      name: "details",
+      label: "Details",
+      isRequired: false,
+      type: "textarea",
+    },
+  ];
+};
+
 export const createAssetInputsTwo = (): AuthInput[] => {
   return [
     {
