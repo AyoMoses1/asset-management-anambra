@@ -14,7 +14,7 @@ import {
 } from "@chakra-ui/react";
 import AuthInput from "components/common/AuthInput";
 import DashboardLayout from "layouts/DashboardLayout";
-import { BORDER_LIGHT } from "utils/color";
+import { BORDER_LIGHT, TINT_YELLOW } from "utils/color";
 import {
   assetModelInputs,
   checkoutAssetInputs,
@@ -52,7 +52,7 @@ const Checkout = () => {
           <Heading variant={"h5Small"} textTransform={"uppercase"} mb={"24px"}>
             Asset Tag
           </Heading>
-          <Tabs variant="soft-rounded" colorScheme="orange" mb={4}>
+          <Tabs variant="soft-rounded" mb={4}>
             <Flex gap={6} alignItems={"center"} ml={5}>
               <Text
                 variant={"small"}
@@ -73,6 +73,7 @@ const Checkout = () => {
                     gap={"6px"}
                     px={"22.5px"}
                     py={"6px"}
+                    _selected={{ bg: TINT_YELLOW }}
                   >
                     <tab.icon />
                     {tab.name}
