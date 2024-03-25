@@ -49,6 +49,7 @@ interface AuthInputProps extends InputProps {
   isDisabled?: boolean;
   rightElement?: string;
   addNew?: IconType | string;
+  openAddNewModal?: () => void;
   data?: { label: string; value: string | number }[];
   selectProps?: ComponentProps<Select> & { isCreatable?: boolean };
 }
@@ -73,6 +74,7 @@ const AuthInput: React.FC<AuthInputProps> = ({
   type,
   rightElement,
   addNew,
+  openAddNewModal,
   // onChange,
   ...rest
 }) => {
@@ -362,7 +364,7 @@ const AuthInput: React.FC<AuthInputProps> = ({
                 <IconButton
                   variant={"outline"}
                   icon={<AddIcon />}
-                  // onClick={onOpen}
+                  onClick={openAddNewModal}
                   aria-label="add-new"
                 />
               ))}

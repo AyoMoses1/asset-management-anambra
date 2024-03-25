@@ -33,3 +33,5 @@ export const BORDER_DARK = "#1C1C1C"
 
 export const ICON_LIGHT = "#9DA1A7"
 export const ICON_DARK = "#1C1C1C"
+
+export const BG_LIGHT = "#fffcf6"

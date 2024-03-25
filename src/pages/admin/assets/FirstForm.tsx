@@ -25,7 +25,6 @@ interface FirstFormProps {
 const FirstForm: React.FC<FirstFormProps> = ({ setActiveStep }) => {
   const { control } = useForm();
   const { isOpen, onOpen, onClose } = useDisclosure();
-  console.log({ onOpen });
 
   return (
     <Box
@@ -59,6 +58,7 @@ const FirstForm: React.FC<FirstFormProps> = ({ setActiveStep }) => {
             label={input.label}
             type={input.type}
             addNew={input.addNew}
+            openAddNewModal={onOpen}
             bg={"transparent"}
             isPassword={input.type === "password"}
             isRequired={input.isRequired}

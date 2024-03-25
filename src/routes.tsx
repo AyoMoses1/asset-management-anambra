@@ -12,6 +12,7 @@ import CreateNewAsset from "pages/admin/assets/CreateNew";
 import AssetCheckout from "pages/admin/assets/Checkout"
 import AssetHistory from "pages/admin/assets/History"
 import ViewAsset from "pages/admin/assets/ViewAsset";
+import Users from "pages/admin/users"
 
 export default [
   {
@@ -91,6 +92,15 @@ export default [
   {
     path: "/dashboard/assets/create-new",
     element: <CreateNewAsset />,
+    name: "User Panel",
+  },
+
+
+  // USER MANAGEMENT
+
+  {
+    path: "/dashboard/users",
+    element: <Users />,
     name: "User Panel",
   },
   {

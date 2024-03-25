@@ -11,19 +11,19 @@ import {
 } from "@chakra-ui/react";
 import { AddIcon } from "@chakra-ui/icons";
 import CustomTable from "components/tables/CustomTable";
-import { mainAssets, mainColumns } from "pages/user/helpers";
+import { users, columns } from "./helpers";
 import useSubHeaderComponentMemo from "components/common/useSubHeaderComponentMemo";
 import FilterComponent from "./FilterComponent";
-import { BORDER_LIGHT } from "utils/color";
+import { BG_LIGHT, BORDER_LIGHT } from "utils/color";
 import { Link } from "react-router-dom";
 
 const Index = () => {
   const { subHeaderComponentMemo } = useSubHeaderComponentMemo(FilterComponent);
   return (
-    <DashboardLayout bg="#fffcf6">
+    <DashboardLayout bg={BG_LIGHT}>
       <Stack>
-        <HStack>
-          <Heading variant={"h3Small"}>All Assets</Heading>
+        <HStack mb={"20px"}>
+          <Heading variant={"h3Small"}>Users</Heading>
           <Spacer />
           <Flex gap={"7px"} mr={"30%"}>
             <Button variant={"outline"}>Custom export</Button>
@@ -45,8 +45,8 @@ const Index = () => {
           borderRadius={"8px"}
         >
           <CustomTable
-            columns={mainColumns as any}
-            data={mainAssets}
+            columns={columns as any}
+            data={users}
             selectableRows
             responsive={true}
             subHeaderComponent={subHeaderComponentMemo}
