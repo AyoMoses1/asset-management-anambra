@@ -9,10 +9,11 @@ import Profile from "pages/user/Profile";
 import AdminDashboard from "pages/admin/dashboard";
 import Assets from "pages/admin/assets";
 import CreateNewAsset from "pages/admin/assets/CreateNew";
-import AssetCheckout from "pages/admin/assets/Checkout"
-import AssetHistory from "pages/admin/assets/History"
+import AssetCheckout from "pages/admin/assets/Checkout";
+import AssetHistory from "pages/admin/assets/History";
 import ViewAsset from "pages/admin/assets/ViewAsset";
-import Users from "pages/admin/users"
+import Users from "pages/admin/users";
+import PredefinedKits from "pages/admin/predefined-kits";
 
 export default [
   {
@@ -95,6 +96,12 @@ export default [
     name: "User Panel",
   },
 
+  // PREDEFINED KITS MANAGEMENT
+  {
+    path: "/dashboard/predefined-kits",
+    element: <PredefinedKits />,
+    name: "Predefined Kits",
+  },
 
   // USER MANAGEMENT
 

@@ -16,7 +16,7 @@ import { TEXT_SECONDARY } from "utils/color";
 
 const History = () => {
   return (
-    <DashboardLayout>
+    <DashboardLayout bg="#fffcf6">
       <Heading variant={"h3Small"} mb={6}>
         Import History
       </Heading>
