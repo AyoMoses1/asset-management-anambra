@@ -1,3 +1,6 @@
+body {
+  overflow-y: hidden;
+}
 .gradient-text {
   background: linear-gradient(90deg, #ffebba, #ffc334);
   -webkit-background-clip: text;
@@ -53,4 +56,24 @@
 
 .custom-select {
   min-width: 590px;
+}
+
+/* Target the horizontal scrollbar */
+::-webkit-scrollbar {
+  height: 12px; /* Height of the scrollbar */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #eeeeee; /* Color of the track */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #ffc334; /* Color of the handle */
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #ffc334; /* Color of the handle on hover */
 }

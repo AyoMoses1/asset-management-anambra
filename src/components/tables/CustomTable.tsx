@@ -1,28 +1,39 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from "react";
-import DataTable, { TableProps } from "react-data-table-component";
+import DataTable, { TableProps, createTheme } from "react-data-table-component";
 import { DARK, TEXT_DARK_GRAY, TEXT_PRIMARY, TINT_GREY } from "utils/color";
 import { CircularProgress, HStack, Text } from "@chakra-ui/react";
 import CustomPagination from "./CustomPagination";
 import EmptyTable from "./EmptyTable";
 
+createTheme(
+  "solarized",
+  {
+    selected: {
+      default: "#FFF8E8",
+      text: "#FFFFFF",
+    },
+  },
+  "light"
+);
+
 interface CustomTableProps extends TableProps<any> {}
+
 const CustomTable: React.FC<CustomTableProps> = (props) => {
   return (
     <DataTable
       pagination
+      theme={"solarized"}
       customStyles={{
         rows: {
           style: {
             "&:not(:last-of-type)": { border: 0 },
-            "&:selected": {
-              background: "red",
-            },
           },
         },
         tableWrapper: {
           style: {
             background: "inherit",
+            marginBottom: "24px",
           },
         },
         subHeader: {
@@ -76,6 +87,7 @@ const CustomTable: React.FC<CustomTableProps> = (props) => {
       }
       paginationComponent={(props: any) => <CustomPagination {...props} />}
       {...props}
+      selectableRowsHighlight
     />
   );
 };

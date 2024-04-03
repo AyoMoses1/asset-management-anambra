@@ -3,6 +3,7 @@ import DashboardLayout from "layouts/DashboardLayout";
 import {
   Box,
   Button,
+  // Checkbox,
   Flex,
   HStack,
   Heading,
@@ -19,6 +20,11 @@ import { Link } from "react-router-dom";
 
 const Index = () => {
   const { subHeaderComponentMemo } = useSubHeaderComponentMemo(FilterComponent);
+
+  // const ChakraCheckbox = ({ checked, onChange }) => {
+  //   return <Checkbox isChecked={checked} onChange={onChange} />;
+  // };
+
   return (
     <DashboardLayout bg={BG_LIGHT}>
       <Stack>
@@ -50,9 +56,10 @@ const Index = () => {
             selectableRows
             responsive={true}
             subHeaderComponent={subHeaderComponentMemo}
+            // selectableRowsComponent={Checkbox}
             pagination
             paginationServer
-          />{" "}
+          />
         </Box>
       </Stack>
     </DashboardLayout>
