@@ -6,7 +6,7 @@ const ViewUser = () => {
   return (
     <DashboardLayout>
       <Stack spacing={"30px"}>
-        <Heading variant={"h3Small"}>View Asset 00008</Heading>
+        <Heading variant={"h3Small"}>View User 00008</Heading>
         {/* <AlertComponent title={"pending items"} /> */}
         <TabComponent />
       </Stack>

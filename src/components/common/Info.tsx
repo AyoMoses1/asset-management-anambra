@@ -1,26 +1,12 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Box, Flex, Text } from "@chakra-ui/react";
 import InfoCard from "./InfoCard";
 
-const Info = () => {
-  const profile = {
-    status: "Archived",
-    mda: "ANAMBRA MDA",
-    assetName: "Office mouse",
-    serial: "9874nv93745b3",
-    category: "Office Equipment",
-    model: "Input Devices",
-    modelNo: "8927439220-44",
-    byod: "Yes",
-    purchaseDate: "2024-02-01 - 0 years, 0 months and 19 days",
-    purchaseCost: "5,000.00",
-    orderNumber: "#974395393847",
-    supplier: "Logitech",
-    warranty: "6 months",
-    warrantyExpires: "2024-08-01 -- 6 months 2 weeks from now",
-    eolRate: "0 months",
-    eolDate: "2024-08-01 -- 6 months 2 weeks from now ",
-  };
-
+interface InfoProps {
+  profile: any;
+  buttons: string[];
+}
+const Info: React.FC<InfoProps> = ({ profile, buttons }) => {
   return (
     <Flex
       style={{ padding: "0px !important" }}
@@ -45,12 +31,12 @@ const Info = () => {
                 : key}
             </Text>
             <Text variant={"small"} color={"#000"}>
-              {value}
+              {value as number}
             </Text>
           </Flex>
         ))}
       </Box>
-      <InfoCard />
+      <InfoCard buttons={buttons} />
     </Flex>
   );
 };
