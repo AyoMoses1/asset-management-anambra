@@ -14,6 +14,7 @@ import AssetHistory from "pages/admin/assets/History";
 import ViewAsset from "pages/admin/assets/ViewAsset";
 import Users from "pages/admin/users";
 import PredefinedKits from "pages/admin/predefined-kits";
+import ViewUser from "pages/admin/users/ViewUser";
 
 export default [
   {
@@ -108,6 +109,11 @@ export default [
   {
     path: "/dashboard/users",
     element: <Users />,
+    name: "User Panel",
+  },
+  {
+    path: "/dashboard/users/:id",
+    element: <ViewUser />,
     name: "User Panel",
   },
   {

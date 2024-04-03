@@ -16,11 +16,12 @@ import { users, columns } from "./helpers";
 import useSubHeaderComponentMemo from "components/common/useSubHeaderComponentMemo";
 import FilterComponent from "./FilterComponent";
 import { BG_LIGHT, BORDER_LIGHT } from "utils/color";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 // import ChakraCheckbox from "components/common/CheckBox";
 
 const Index = () => {
   const { subHeaderComponentMemo } = useSubHeaderComponentMemo(FilterComponent);
+  const navigate = useNavigate();
 
   // const ChakraCheckbox = ({ checked, onChange }) => {
   //   return <Checkbox isChecked={checked} onChange={onChange} />;
@@ -52,7 +53,7 @@ const Index = () => {
           borderRadius={"8px"}
         >
           <CustomTable
-            columns={columns as any}
+            columns={columns(navigate) as any}
             data={users}
             selectableRows
             responsive={true}

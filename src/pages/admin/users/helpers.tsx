@@ -11,6 +11,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { BiEdit, BiTrash } from "react-icons/bi";
+import { NavigateFunction } from "react-router-dom";
 import {
   MAIN_BLUE,
   MAIN_GREEN,
@@ -71,11 +72,19 @@ export const users = [
   },
 ];
 
-export const columns = [
+export const columns = (navigate: NavigateFunction) => [
   {
     name: "name",
     cell: (data: any) => {
-      return <Text variant={"tableCell"}>{data.name}</Text>;
+      return (
+        <Text
+          variant={"tableCell"}
+          cursor={"pointer"}
+          onClick={() => navigate(`/dashboard/users/${data.username}`)}
+        >
+          {data.name}
+        </Text>
+      );
     },
     sortable: true,
     width: "124px",
@@ -201,5 +210,18 @@ export const columns = [
         </HStack>
       );
     },
+  },
+];
+
+export const assets = [
+  {
+    id: 1,
+    image:
+      "https://images.unsplash.com/photo-1502877338535-766e1452684a?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8Y2FyfGVufDB8fDB8fHww",
+    category: "Electronics",
+    assetTag: "0001",
+    name: "Laptop",
+    model: "HP Pavilion",
+    serial: "ABC123456789",
   },
 ];
