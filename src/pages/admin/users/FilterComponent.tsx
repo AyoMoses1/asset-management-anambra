@@ -10,12 +10,13 @@ import {
   Input,
   InputGroup,
   InputRightElement,
-  Select,
   Spacer,
 } from "@chakra-ui/react";
 import { BORDER_LIGHT, ICON_DARK, TINT_GREY } from "utils/color";
 import { SearchIcon } from "@chakra-ui/icons";
 import { tableFilters } from "utils/data";
+import AuthInput from "components/common/AuthInput";
+import { useForm } from "react-hook-form";
 
 interface FilterComponentProp {
   onFilter: (e: any) => void;
@@ -26,6 +27,7 @@ const FilterComponent: React.FC<FilterComponentProp> = ({
   onFilter,
   filterText,
 }) => {
+  const { control } = useForm();
   return (
     <HStack
       spacing={"16px"}
@@ -33,7 +35,25 @@ const FilterComponent: React.FC<FilterComponentProp> = ({
       w={"full"}
     >
       <Flex gap={"6px"}>
-        <Select placeholder="Select a bulk action" />
+        <AuthInput
+          width="243px"
+          isFlexed
+          control={control}
+          name={"bulk action"}
+          mb={4}
+          autoComplete={"none"}
+          placeholder="Select a bulk action"
+          isIconComponent
+          isSelect
+          data={[
+            { label: "Edit", value: 444 },
+            { label: "Check-in", value: 444 },
+            { label: "Merge-users", value: 444 },
+            { label: "Send password reset link", value: 444 },
+            { label: "Delete", value: 444 },
+          ]}
+          bg={"transparent"}
+        />
         <Button variant={"outline"}>Go</Button>
       </Flex>
       <Spacer />

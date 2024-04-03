@@ -17,6 +17,7 @@ import useSubHeaderComponentMemo from "components/common/useSubHeaderComponentMe
 import FilterComponent from "./FilterComponent";
 import { BG_LIGHT, BORDER_LIGHT } from "utils/color";
 import { Link } from "react-router-dom";
+// import ChakraCheckbox from "components/common/CheckBox";
 
 const Index = () => {
   const { subHeaderComponentMemo } = useSubHeaderComponentMemo(FilterComponent);
@@ -56,7 +57,7 @@ const Index = () => {
             selectableRows
             responsive={true}
             subHeaderComponent={subHeaderComponentMemo}
-            // selectableRowsComponent={Checkbox}
+            // selectableRowsComponent={ChakraCheckbox}
             pagination
             paginationServer
           />

@@ -74,6 +74,7 @@ const AuthInput: React.FC<AuthInputProps> = ({
   type,
   rightElement,
   addNew,
+  width,
   openAddNewModal,
   // onChange,
   ...rest
@@ -181,7 +182,7 @@ const AuthInput: React.FC<AuthInputProps> = ({
           )}
         </Flex>
         <Flex w={"100%"} gap={"24px"}>
-          <ChakraSelect placeholder="Select option" mb={4}>
+          <ChakraSelect placeholder="Select option" mb={4} w={width ?? width}>
             {data?.map((item) => (
               <option value={item.value}>{item.label}</option>
             ))}
