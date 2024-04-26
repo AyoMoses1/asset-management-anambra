@@ -14,7 +14,7 @@ import { TINT_GREY } from "utils/color";
 
 interface InfoProps {
   profile: any;
-  buttons: string[];
+  buttons: NavButtons[]
   extraInformation?: boolean;
   extraData: any;
 }
@@ -24,7 +24,6 @@ const Info: React.FC<InfoProps> = ({
   extraInformation,
   extraData,
 }) => {
-  console.log({ extraData });
   return (
     <Flex
       style={{ padding: "0px !important" }}

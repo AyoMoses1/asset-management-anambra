@@ -31,3 +31,8 @@ interface FilterComponentProp {
   onClear: () => void;
   filterText: string;
 }
+
+type NavButtons = {
+  name: string;
+  link: string
+}

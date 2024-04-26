@@ -111,8 +111,13 @@ export default [
     element: <Users />,
     name: "User Panel",
   },
+  // {
+  //   path: "/dashboard/users/:id",
+  //   element: <ViewUser />,
+  //   name: "User Panel",
+  // },
   {
-    path: "/dashboard/users/:id",
+    path: "/dashboard/users/:id/edit-user",
     element: <ViewUser />,
     name: "User Panel",
   },

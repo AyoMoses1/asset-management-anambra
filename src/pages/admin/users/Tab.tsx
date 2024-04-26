@@ -56,11 +56,11 @@ const TabComponent = () => {
   };
 
   const buttons = [
-    "Edit User",
-    "Clone User",
-    "Print all assigned",
-    "Email list of all assigned",
-    "Send password reset link",
+    { name: "Edit User", link: "/dashboard/users/johndoe/edit-user" },
+    { name: "Clone User", link: "" },
+    { name: "Print all assigned", link: "" },
+    { name: "Email list of all assigned", link: "" },
+    { name: "Send password reset link", link: "" },
   ];
 
   return (
@@ -86,7 +86,12 @@ const TabComponent = () => {
       />
       <TabPanels mt={"24px"}>
         <TabPanel>
-          <Info profile={profile} buttons={buttons} extraInformation={true} extraData={extraData} />
+          <Info
+            profile={profile}
+            buttons={buttons}
+            extraInformation={true}
+            extraData={extraData}
+          />
         </TabPanel>
         <TabPanel>
           <Assets />
