@@ -20,7 +20,7 @@ const Faq = () => {
         Find answers to common questions about our ASSET management platform and
         its features.
       </Text>
-      <Accordion w={"100%"}>
+      <Accordion w={"100%"} allowMultiple={true}>
         {faq.map((item, idx) => (
           <AccordionItem
             key={idx}
