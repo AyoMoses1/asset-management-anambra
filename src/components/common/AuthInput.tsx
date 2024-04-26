@@ -182,9 +182,15 @@ const AuthInput: React.FC<AuthInputProps> = ({
           )}
         </Flex>
         <Flex w={"100%"} gap={"24px"}>
-          <ChakraSelect placeholder="Select option" mb={4} w={width ?? width}>
+          <ChakraSelect
+            placeholder={rest.placeholder ? rest.placeholder : "Select option"}
+            mb={4}
+            w={width ?? width}
+          >
             {data?.map((item) => (
-              <option value={item.value}>{item.label}</option>
+              <option value={item.value} style={{ background: "white" }}>
+                {item.label}
+              </option>
             ))}
           </ChakraSelect>
           {addNew &&

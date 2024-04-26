@@ -36,6 +36,25 @@ const TabComponent = () => {
     orderNumber: "#974395393847",
   };
 
+  const extraData = {
+    name: "Total assets cost",
+    value: "150,000.00",
+    optionalInformation: [
+      {
+        title: "Assets",
+        value: "150,000.00",
+      },
+      {
+        title: "Licenses",
+        value: "150,000.00",
+      },
+      {
+        title: "Accessories",
+        value: "150,000.00",
+      },
+    ],
+  };
+
   const buttons = [
     "Edit User",
     "Clone User",
@@ -67,7 +86,7 @@ const TabComponent = () => {
       />
       <TabPanels mt={"24px"}>
         <TabPanel>
-          <Info profile={profile} buttons={buttons} />
+          <Info profile={profile} buttons={buttons} extraInformation={true} extraData={extraData} />
         </TabPanel>
         <TabPanel>
           <Assets />
