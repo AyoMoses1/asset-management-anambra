@@ -17,6 +17,7 @@ type AuthInput = {
   type: string;
   addNew?: IconType | string;
   rightElement?: string;
+  checkboxData?: string;
   data?:  T[]
 };
 

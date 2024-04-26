@@ -397,7 +397,7 @@ export const createAssetInputsTwo = (): AuthInput[] => {
   ];
 };
 
-export const createUserInoutsTwo = (): AuthInput[] => {
+export const createUserInputsTwo = (): AuthInput[] => {
   return [
     {
       name: "warranty",
@@ -407,10 +407,36 @@ export const createUserInoutsTwo = (): AuthInput[] => {
       rightElement: "months",
     },
     {
-      name: "byod",
-      label: "BYOD (This device is owned by the user)",
+      name: "vip",
+      label: "VIP User",
       isRequired: false,
       type: "checkbox",
+      checkboxData: "This can be helpful to mark important people in your org if you would like to handle them in special ways."
+    },
+    {
+      name: "autoAssign",
+      label: "Auto-assign licenses",
+      isRequired: false,
+      type: "checkbox",
+      checkboxData: "This allows a user to be have licenses assigned via the bulk-assign license UI or cli tools. (For example, you might not want contractors to be auto-assigned a license you would provide to only staff members. You can still individually assign licenses to those users, but they will not be included in the Checkout License to All Users functions.)"
+    },
+    {
+      name: "remoteUser",
+      label: "This is a remote user",
+      isRequired: false,
+      type: "checkbox",
+      checkboxData: "This can be useful if you need to filter by remote users who never or rarely come into your physical locations."
+    },
+    {
+      name: "groups",
+      label: "Groups",
+      rule: "Select a group",
+      isRequired: false,
+      type: "select",
+      data: [
+        { name: "sssssss", value: 444 },
+        { name: "sssssss", value: 444 },
+      ],
     },
   ];
 };

@@ -23,6 +23,7 @@ import {
   createAssetInputs,
   createAssetInputsTwo,
   createUserInputs,
+  createUserInputsTwo,
 } from "utils/data";
 import { useForm } from "react-hook-form";
 import {
@@ -102,6 +103,7 @@ const EditForm = () => {
             mb={4}
             autoComplete={"none"}
             placeholder={input.placeholder}
+            isSelect={input.type === "select" ? true : false}
             isIconComponent
             label={input.label}
             type={input.type}
@@ -139,7 +141,7 @@ const EditForm = () => {
                 </Box>
               </AccordionButton>
               <AccordionPanel pb={4}>
-                {createAssetInputsTwo().map((input, idx) => (
+                {createUserInputsTwo().map((input, idx) => (
                   <Flex gap={"6px"}>
                     <AuthInput
                       key={idx}
@@ -147,6 +149,7 @@ const EditForm = () => {
                       control={control}
                       name={input.name}
                       rightElement={input.rightElement}
+                      checkboxData={input.checkboxData}
                       mb={4}
                       autoComplete={"none"}
                       placeholder={input.placeholder}
@@ -164,16 +167,6 @@ const EditForm = () => {
                         },
                       }}
                     />
-                    {input.addNew &&
-                      (typeof input.addNew === "string" ? (
-                        <Button variant={"outline"}>{input.addNew}</Button>
-                      ) : (
-                        <IconButton
-                          variant={"outline"}
-                          icon={<input.addNew />}
-                          aria-label="add-new"
-                        />
-                      ))}
                   </Flex>
                 ))}
               </AccordionPanel>

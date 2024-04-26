@@ -29,7 +29,7 @@ import { useController } from "react-hook-form";
 import { IconType } from "react-icons";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 import Select from "react-select";
-import { TEXT_PRIMARY, TINT_GREY } from "utils/color";
+import { TEXT_PRIMARY, TEXT_SECONDARY, TINT_GREY } from "utils/color";
 import { AddIcon } from "@chakra-ui/icons";
 
 interface AuthInputProps extends InputProps {
@@ -50,6 +50,7 @@ interface AuthInputProps extends InputProps {
   isDisabled?: boolean;
   rightElement?: string;
   addNew?: IconType | string;
+  checkboxData?: string;
   openAddNewModal?: () => void;
   data?: { label: string; value: string | number }[];
   selectProps?: ComponentProps<Select> & { isCreatable?: boolean };
@@ -76,6 +77,7 @@ const AuthInput: React.FC<AuthInputProps> = ({
   rightElement,
   addNew,
   width,
+  checkboxData,
   openAddNewModal,
   // onChange,
   ...rest
@@ -95,12 +97,13 @@ const AuthInput: React.FC<AuthInputProps> = ({
 
   if (type === "checkbox")
     return (
-      <Stack spacing={5} direction="row" pl={"25%"} mb={"24px"}>
+      <Stack spacing={5} direction="column" pl={"25%"} mb={"24px"}>
         <Checkbox>
           <Text fontWeight={"600"} color={TEXT_PRIMARY} fontSize={"16px"}>
             {label}
           </Text>
         </Checkbox>
+        <Text variant={"xs"} color={TEXT_SECONDARY}>{checkboxData}</Text>
       </Stack>
     );
 
@@ -367,7 +370,9 @@ const AuthInput: React.FC<AuthInputProps> = ({
                 />
               ))}
             {rightElement && (
-              <InputRightAddon py={"23px"} bg={TINT_GREY}>{rightElement}</InputRightAddon>
+              <InputRightAddon py={"23px"} bg={TINT_GREY}>
+                {rightElement}
+              </InputRightAddon>
             )}
           </InputGroup>
         </InputGroup>
