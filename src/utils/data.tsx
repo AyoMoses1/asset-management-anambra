@@ -186,6 +186,55 @@ export const createAssetInputs = (): AuthInput[] => {
   ];
 };
 
+export const createUserInputs = (): AuthInput[] => {
+  return [
+    {
+      name: "firstName",
+      label: "First Name",
+      isRequired: true,
+      type: "text",
+    },
+    {
+      name: "lastName",
+      label: "Last Name",
+      isRequired: true,
+      type: "text",
+    },
+    {
+      name: "username",
+      label: "Username",
+      isRequired: true,
+      type: "text",
+    },
+    {
+      name: "password",
+      label: "Password",
+      isRequired: true,
+      type: "password",
+      addNew: "Generate",
+    },
+    {
+      name: "confirmPassword",
+      label: "Confirm Password",
+      isRequired: true,
+      type: "password",
+    },
+    {
+      name: "email",
+      label: "Email",
+      isRequired: true,
+      type: "email",
+    },
+    {
+      name: "user",
+      label: "User",
+      placeholder: "Select a file",
+      isRequired: false,
+      type: "file",
+    },
+  ];
+};
+
 export const checkoutAssetInputs = (): AuthInput[] => {
   return [
     {
@@ -332,6 +381,24 @@ export const createAssetInputsTwo = (): AuthInput[] => {
       isRequired: false,
       type: "text",
     },
+    {
+      name: "warranty",
+      label: "Warranty",
+      isRequired: false,
+      type: "number",
+      rightElement: "months",
+    },
+    {
+      name: "byod",
+      label: "BYOD (This device is owned by the user)",
+      isRequired: false,
+      type: "checkbox",
+    },
+  ];
+};
+
+export const createUserInoutsTwo = (): AuthInput[] => {
+  return [
     {
       name: "warranty",
       label: "Warranty",

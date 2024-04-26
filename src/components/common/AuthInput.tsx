@@ -22,6 +22,7 @@ import {
   Text,
   Textarea,
   Select as ChakraSelect,
+  InputRightAddon,
 } from "@chakra-ui/react";
 import React, { ComponentProps } from "react";
 import { useController } from "react-hook-form";
@@ -327,16 +328,6 @@ const AuthInput: React.FC<AuthInputProps> = ({
               )}
             </InputLeftElement>
           )}
-          {rightElement && (
-            <InputRightElement
-              bg={TINT_GREY}
-              display={"flex"}
-              alignItems={"center"}
-              px={12}
-            >
-              {rightElement}
-            </InputRightElement>
-          )}
           {isPassword && includePasswordIcon && (
             <InputRightElement
               variant={"link"}
@@ -356,7 +347,7 @@ const AuthInput: React.FC<AuthInputProps> = ({
               }
             />
           )}
-          <Flex w={"100%"} gap={"24px"}>
+          <InputGroup>
             <Input
               {...rest}
               type={isPassword ? (isOpen ? "text" : "password") : type}
@@ -375,7 +366,10 @@ const AuthInput: React.FC<AuthInputProps> = ({
                   aria-label="add-new"
                 />
               ))}
-          </Flex>
+            {rightElement && (
+              <InputRightAddon py={"23px"} bg={TINT_GREY}>{rightElement}</InputRightAddon>
+            )}
+          </InputGroup>
         </InputGroup>
         {Boolean(error) && (
           <FormErrorMessage fontSize={"xs"}>{error?.message}</FormErrorMessage>
