@@ -9,10 +9,6 @@ import {
   ButtonGroup,
   Flex,
   HStack,
-  Heading,
-  Icon,
-  IconButton,
-  Spacer,
   Text,
   useDisclosure,
 } from "@chakra-ui/react";
@@ -20,14 +16,11 @@ import AuthInput from "components/common/AuthInput";
 import { BORDER_LIGHT, DARK, TEXT_SECONDARY, TINT_GREY } from "utils/color";
 import {
   assetModelInputs,
-  createAssetInputs,
-  createAssetInputsTwo,
   createUserInputs,
   createUserInputsTwo,
 } from "utils/data";
 import { useForm } from "react-hook-form";
 import {
-  ChevronRightIcon,
   TriangleDownIcon,
   TriangleUpIcon,
 } from "@chakra-ui/icons";
