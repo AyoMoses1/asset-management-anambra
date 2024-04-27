@@ -27,9 +27,11 @@ const Index = () => {
   return (
     <DashboardLayout bg={BG_LIGHT}>
       <Heading variant={"h3Small"}>Admin Settings</Heading>
-      <HStack mt={"28.5px"} alignItems={"start"}>
-        <Sidebar handleState={handleState} />
-        <Stack>{settings[state]?.component}</Stack>
+      <HStack mt={"28.5px"} alignItems={"start"} spacing={"43px"}>
+        <Stack>
+          <Sidebar handleState={handleState} />
+        </Stack>
+        <Stack width={"100%"}>{settings[state]?.component}</Stack>
       </HStack>
     </DashboardLayout>
   );

@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React from "react";
 import {
   Box,
   Button,
@@ -25,7 +24,7 @@ const General = () => {
     <Box
       bg={"white"}
       p={"24px"}
-      maxW={"842px"}
+      width={"100%"}
       border={"1px solid"}
       borderColor={BORDER_LIGHT}
       borderRadius={"8px"}
