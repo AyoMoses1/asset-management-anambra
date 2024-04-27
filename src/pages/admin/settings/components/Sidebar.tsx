@@ -8,7 +8,7 @@ import { SearchIcon } from "@chakra-ui/icons";
 const Sidebar = () => {
   const { secondaryLinks } = useNavigation();
   return (
-    <VStack>
+    <VStack height={"90vh"} overflowY={"scroll"} pr={"10px"}>
       <InputGroup>
         <Input placeholder="Search for a setting"/>
         <InputRightElement bg={MAIN_BLACK}>

@@ -132,9 +132,9 @@ export default [
     name: "User Panel",
   },
 
-  {
-    path: "*",
-    element: <Navigate to={"/login"} replace />,
-    name: "Notfound",
-  },
+  // {
+  //   path: "*",
+  //   element: <Navigate to={"/login"} replace />,
+  //   name: "Notfound",
+  // },
 ];

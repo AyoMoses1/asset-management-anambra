@@ -2,6 +2,7 @@ import { ChevronRightIcon } from "@chakra-ui/icons";
 import { Text, Icon, HStack, VStack } from "@chakra-ui/react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import {
+  ICON_DARK,
   MAIN_YELLOW,
   TEXT_PRIMARY,
   TEXT_SECONDARY,
@@ -36,15 +37,15 @@ const SidebarItemTwo: React.FC<SecondaryBarType> = (item) => {
       rounded={"sm"}
       px={"12px"}
       py={"12px"}
-      // _hover={{ bg: !isActive && LIGHT_GREEN }}
       color={isActive ? TEXT_PRIMARY : TEXT_SECONDARY}
       bg={isActive ? MAIN_YELLOW : TINT_GREY}
       onClick={() => handleNavigation(item.link)}
+      cursor={"pointer"}
     >
       {typeof item.icon !== "string" && (
         <Icon
           as={item.icon}
-          color={"red"}
+          color={ICON_DARK}
           fontSize={"18"}
         />
       )}
