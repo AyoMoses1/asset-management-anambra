@@ -15,8 +15,10 @@ import h4 from "assets/h4.png";
 import h5 from "assets/h5.png";
 import h6 from "assets/h6.png";
 import h7 from "assets/h7.png";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
+  const navigate = useNavigate()
   return (
     <Box bgColor={"#1E2124"} position={"relative"}>
       <Image src={logo} position={"absolute"} left={"34px"} top={"21px"} />
@@ -30,7 +32,11 @@ const Hero = () => {
             <Heading variant={"h1"} mb={[3, 3, 4]} className="gradient-text">
               Empowering the state through effective asset management{" "}
             </Heading>
-            <Text color={"others.white"} className="text-grad-hero" position={"relative"}>
+            <Text
+              color={"others.white"}
+              className="text-grad-hero"
+              position={"relative"}
+            >
               The Anambra State Asset Management platform provides real-time
               tracking and management solutions to help optimally manage the
               government's resources, promote accountability and streamline
@@ -41,7 +47,12 @@ const Hero = () => {
               mt={9}
               mb={["24px", "40px"]}
             >
-              <Button w={["full", "full", "initial"]}>Get started</Button>
+              <Button
+                w={["full", "full", "initial"]}
+                onClick={() => navigate("/login")}
+              >
+                Get started
+              </Button>
               <Button
                 w={["full", "full", "initial"]}
                 variant={"tertiary"}
