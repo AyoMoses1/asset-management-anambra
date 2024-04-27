@@ -9,6 +9,8 @@ import SidebarItem from "components/layout-components/SidebarItemTwo";
 import { MAIN_BLACK } from "utils/color";
 import { useNavigation } from "contexts/NavContexts";
 import { SearchIcon } from "@chakra-ui/icons";
+import General from "../General";
+import Notifications from "../Notifications";
 
 const Sidebar = () => {
   const { secondaryLinks } = useNavigation();

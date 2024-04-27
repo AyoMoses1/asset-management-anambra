@@ -67,7 +67,7 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #ffc334;
+  background: #ffc334; /* Color of the handle */
 }
 
 /* Handle on hover */
