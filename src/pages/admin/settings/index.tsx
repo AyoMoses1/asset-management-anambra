@@ -7,7 +7,7 @@ const Index = () => {
   return (
     <DashboardLayout bg={BG_LIGHT}>
       <Heading variant={"h3Small"}>Admin Settings</Heading>
-      <HStack>
+      <HStack mt={"28.5px"}>
         <Sidebar />
         <Stack>
           <Box>This is the Lord's doing</Box>

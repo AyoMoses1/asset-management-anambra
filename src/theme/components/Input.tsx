@@ -14,7 +14,7 @@ const baseStyle = (props: StyleFunctionProps) =>
       // color: props.theme.colors[props.colorMode].textThree.neutralGray,
       border: "1px solid",
       borderColor: props.theme.colors.tint.grey,
-      bg: props.theme.colors.tint.grey,
+      // bg: props.theme.colors.tint.grey,
       height: "45px",
       _focusVisible: {
         borderColor: props.theme.colors.tint.grey,

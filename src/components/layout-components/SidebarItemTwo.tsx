@@ -1,34 +1,20 @@
-import { Text, Icon, HStack } from "@chakra-ui/react";
-import { useNavigation } from "contexts/NavContexts";
-import { IconType } from "react-icons";
+import { ChevronRightIcon } from "@chakra-ui/icons";
+import { Text, Icon, HStack, VStack } from "@chakra-ui/react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import {
-  LIGHT_GREEN,
   MAIN_YELLOW,
   TEXT_PRIMARY,
   TEXT_SECONDARY,
+  TINT_GREY,
 } from "utils/color";
 
-interface SidebarItemProps {
-  name: string;
-  link: string;
-  icon: IconType | string;
-  secondaryBar?: SecondaryBarType[];
-}
-const SidebarItemTwo: React.FC<SidebarItemProps> = (item) => {
+const SidebarItemTwo: React.FC<SecondaryBarType> = (item) => {
   const { pathname } = useLocation();
   const param = useParams();
   const navigate = useNavigate();
-  const { updateNavigation } = useNavigation();
 
-  const handleNavigation = (
-    link: string,
-    secondaryNavLinks: SecondaryBarType[] | undefined
-  ): void => {
+  const handleNavigation = (link: string): void => {
     navigate(link);
-    if (secondaryNavLinks) {
-      updateNavigation(secondaryNavLinks);
-    }
   };
 
   const isActive = param.name
@@ -46,30 +32,29 @@ const SidebarItemTwo: React.FC<SidebarItemProps> = (item) => {
 
   return (
     <HStack
-      w={"240px"}
+      w={"304px"}
       rounded={"sm"}
-      px={"24px"}
+      px={"12px"}
       py={"12px"}
-      _hover={{ bg: !isActive && LIGHT_GREEN }}
+      // _hover={{ bg: !isActive && LIGHT_GREEN }}
       color={isActive ? TEXT_PRIMARY : TEXT_SECONDARY}
-      bg={isActive ? MAIN_YELLOW : ""}
-      onClick={() => handleNavigation(item.link, item.secondaryBar)}
+      bg={isActive ? MAIN_YELLOW : TINT_GREY}
+      onClick={() => handleNavigation(item.link)}
     >
       {typeof item.icon !== "string" && (
         <Icon
           as={item.icon}
           color={"red"}
-          // color={isActive ? "red" : "inherit"}
           fontSize={"18"}
         />
       )}
-      <Text
-        variant={"small"}
-        textTransform={"capitalize"}
-        fontWeight={isActive ? 700 : 400}
-      >
-        {item.name}
-      </Text>
+      <VStack alignItems={"start"} spacing={0} mx={"17px"}>
+        <Text variant={"normal"} textTransform={"capitalize"} fontWeight={500}>
+          {item.name}
+        </Text>
+        <Text variant={"xs"}>{item.tag}</Text>
+      </VStack>
+      <Icon as={ChevronRightIcon} fontSize={18} ml={"auto"}/>
     </HStack>
   );
 };
