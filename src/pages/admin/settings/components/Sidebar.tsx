@@ -1,7 +1,12 @@
-import { Stack, Image, HStack, InputGroup, Input, InputRightElement, VStack } from "@chakra-ui/react";
+import {
+  Stack,
+  InputGroup,
+  Input,
+  InputRightElement,
+  VStack,
+} from "@chakra-ui/react";
 import SidebarItem from "components/layout-components/SidebarItemTwo";
-import logo from "assets/logo3.png";
-import { LIGHT_GRAY, MAIN_BLACK } from "utils/color";
+import { MAIN_BLACK } from "utils/color";
 import { useNavigation } from "contexts/NavContexts";
 import { SearchIcon } from "@chakra-ui/icons";
 
@@ -10,7 +15,7 @@ const Sidebar = () => {
   return (
     <VStack height={"90vh"} overflowY={"scroll"} pr={"10px"}>
       <InputGroup>
-        <Input placeholder="Search for a setting"/>
+        <Input placeholder="Search for a setting" />
         <InputRightElement bg={MAIN_BLACK}>
           <SearchIcon color="white" />
         </InputRightElement>
