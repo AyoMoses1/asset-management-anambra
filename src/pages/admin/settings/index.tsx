@@ -1,16 +1,18 @@
-import { Heading, Stack } from "@chakra-ui/react";
-import { useNavigation } from "contexts/NavContexts";
+import { Box, HStack, Heading, Stack } from "@chakra-ui/react";
 import DashboardLayout from "layouts/DashboardLayout";
 import { BG_LIGHT } from "utils/color";
+import Sidebar from "./components/Sidebar";
 
 const Index = () => {
-  const { secondaryLinks } = useNavigation();
-  console.log({ secondaryLinks });
   return (
     <DashboardLayout bg={BG_LIGHT}>
-      <Stack>
-        <Heading variant={"h3Small"}>Admin Settings</Heading>
-      </Stack>
+      <Heading variant={"h3Small"}>Admin Settings</Heading>
+      <HStack>
+        <Sidebar />
+        <Stack>
+          <Box>This is the Lord's doing</Box>
+        </Stack>
+      </HStack>
     </DashboardLayout>
   );
 };
