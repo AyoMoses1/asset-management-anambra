@@ -21,10 +21,18 @@ type AuthInput = {
   data?:  T[]
 };
 
+type SecondaryBarType = {
+  name: string;
+  link: string;
+  icon: IconType | string;
+  tag: string;
+}
+
 type SidebarContentType = {
   name: string;
   link: string;
   icon: IconType | string;
+  secondaryBar?: SecondaryBarType[]
 };
 
 interface FilterComponentProp {

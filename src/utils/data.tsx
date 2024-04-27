@@ -411,21 +411,24 @@ export const createUserInputsTwo = (): AuthInput[] => {
       label: "VIP User",
       isRequired: false,
       type: "checkbox",
-      checkboxData: "This can be helpful to mark important people in your org if you would like to handle them in special ways."
+      checkboxData:
+        "This can be helpful to mark important people in your org if you would like to handle them in special ways.",
     },
     {
       name: "autoAssign",
       label: "Auto-assign licenses",
       isRequired: false,
       type: "checkbox",
-      checkboxData: "This allows a user to be have licenses assigned via the bulk-assign license UI or cli tools. (For example, you might not want contractors to be auto-assigned a license you would provide to only staff members. You can still individually assign licenses to those users, but they will not be included in the Checkout License to All Users functions.)"
+      checkboxData:
+        "This allows a user to be have licenses assigned via the bulk-assign license UI or cli tools. (For example, you might not want contractors to be auto-assigned a license you would provide to only staff members. You can still individually assign licenses to those users, but they will not be included in the Checkout License to All Users functions.)",
     },
     {
       name: "remoteUser",
       label: "This is a remote user",
       isRequired: false,
       type: "checkbox",
-      checkboxData: "This can be useful if you need to filter by remote users who never or rarely come into your physical locations."
+      checkboxData:
+        "This can be useful if you need to filter by remote users who never or rarely come into your physical locations.",
     },
     {
       name: "groups",
@@ -688,6 +691,111 @@ export const socialLinks = [
   },
 ];
 
+export const SettingsSecondaryNavItems: SecondaryBarType[] = [
+  {
+    name: "branding",
+    link: "/dashboard/settings/branding",
+    icon: ImportIcon,
+    tag: "Logo, Site Name",
+  },
+  {
+    name: "general-settings",
+    link: "/dashboard/settings/general",
+    icon: ImportIcon,
+    tag: "Default EULA and more",
+  },
+  {
+    name: "security",
+    link: "/dashboard/settings/security",
+    icon: ImportIcon,
+    tag: "Two-factor, Password Restrictions",
+  },
+  {
+    name: "groups",
+    link: "/dashboard/settings/groups",
+    icon: ImportIcon,
+    tag: "Account permission groups",
+  },
+  {
+    name: "localization",
+    link: "/dashboard/settings/localization",
+    icon: ImportIcon,
+    tag: "Language, date display",
+  },
+  {
+    name: "notification",
+    link: "/dashboard/settings/notification",
+    icon: ImportIcon,
+    tag: "Email Alerts & Audit Settings",
+  },
+  {
+    name: "integrations",
+    link: "/dashboard/settings/integrations",
+    icon: ImportIcon,
+    tag: "Integration settings",
+  },
+  {
+    name: "asset-tags",
+    link: "/dashboard/settings/asset-tags",
+    icon: ImportIcon,
+    tag: "Integration settings",
+  },
+  {
+    name: "barcode",
+    link: "/dashboard/settings/barcode",
+    icon: ImportIcon,
+    tag: "Barcode & QR settings",
+  },
+  {
+    name: "labels",
+    link: "/dashboard/settings/labels",
+    icon: ImportIcon,
+    tag: "Label sizes & settings",
+  },
+  {
+    name: "ldap",
+    link: "/dashboard/settings/ldap",
+    icon: ImportIcon,
+    tag: "LDAP/Active Directory",
+  },
+  {
+    name: "google",
+    link: "/dashboard/settings/google",
+    icon: ImportIcon,
+    tag: "Google Workspace Login Settings",
+  },
+  {
+    name: "saml",
+    link: "/dashboard/settings/saml",
+    icon: ImportIcon,
+    tag: "SAML settings",
+  },
+  {
+    name: "backups",
+    link: "/dashboard/settings/backups",
+    icon: ImportIcon,
+    tag: "Create, download & restore backups",
+  },
+  {
+    name: "login-attempts",
+    link: "/dashboard/settings/login-attempts",
+    icon: ImportIcon,
+    tag: "List of attempted logins",
+  },
+  {
+    name: "oAuth",
+    link: "/dashboard/settings/oauth",
+    icon: ImportIcon,
+    tag: "Oauth Endpoint SEttings",
+  },
+  {
+    name: "purge",
+    link: "/dashboard/settings/purge",
+    icon: ImportIcon,
+    tag: "Purge deleted records",
+  },
+];
+
 export const sidebarContents: SidebarContentType[] = [
   {
     name: "dashboard",
@@ -738,6 +846,7 @@ export const sidebarContents: SidebarContentType[] = [
     name: "settings",
     link: "/dashboard/settings",
     icon: SettingsIcon,
+    secondaryBar: SettingsSecondaryNavItems,
   },
   {
     name: "reports",

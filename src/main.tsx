@@ -9,6 +9,7 @@ import "@fontsource/ibm-plex-sans/500.css";
 import "@fontsource/ibm-plex-sans/600.css";
 import "@fontsource/ibm-plex-sans/700.css";
 import "./index.css";
+import { NavigationProvider } from "contexts/NavContexts";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
@@ -16,7 +17,9 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
       <ChakraProvider theme={customTheme}>
         <Box display={{ base: "none", lg: "block" }}>
           <CSSReset />
-          <App />
+          <NavigationProvider>
+            <App />
+          </NavigationProvider>
         </Box>
       </ChakraProvider>
     </BrowserRouter>

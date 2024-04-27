@@ -16,6 +16,7 @@ import Users from "pages/admin/users";
 import PredefinedKits from "pages/admin/predefined-kits";
 import ViewUser from "pages/admin/users/ViewUser";
 import EditUser from "pages/admin/users/EditUser";
+import Settings from "pages/admin/settings";
 
 export default [
   {
@@ -122,6 +123,15 @@ export default [
     element: <EditUser />,
     name: "User Panel",
   },
+
+  // ADMIN SETTINGS
+
+  {
+    path: "/dashboard/settings",
+    element: <Settings />,
+    name: "User Panel",
+  },
+
   {
     path: "*",
     element: <Navigate to={"/login"} replace />,

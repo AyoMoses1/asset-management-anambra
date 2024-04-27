@@ -1,4 +1,5 @@
 import { Text, Icon, HStack } from "@chakra-ui/react";
+import { useNavigation } from "contexts/NavContexts";
 import { IconType } from "react-icons";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
 import {
@@ -12,14 +13,22 @@ interface SidebarItemProps {
   name: string;
   link: string;
   icon: IconType | string;
+  secondaryBar?: SecondaryBarType[];
 }
 const SidebarItem: React.FC<SidebarItemProps> = (item) => {
   const { pathname } = useLocation();
   const param = useParams();
   const navigate = useNavigate();
+  const { updateNavigation } = useNavigation();
 
-  const handleNavigation = (link: string): void => {
+  const handleNavigation = (
+    link: string,
+    secondaryNavLinks: SecondaryBarType[] | undefined
+  ): void => {
     navigate(link);
+    if (secondaryNavLinks) {
+      updateNavigation(secondaryNavLinks);
+    }
   };
 
   const isActive = param.name
@@ -44,7 +53,7 @@ const SidebarItem: React.FC<SidebarItemProps> = (item) => {
       _hover={{ bg: !isActive && LIGHT_GREEN }}
       color={isActive ? TEXT_PRIMARY : TEXT_SECONDARY}
       bg={isActive ? MAIN_YELLOW : ""}
-      onClick={() => handleNavigation(item.link)}
+      onClick={() => handleNavigation(item.link, item.secondaryBar)}
     >
       {typeof item.icon !== "string" && (
         <Icon
