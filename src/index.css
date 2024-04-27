@@ -1,3 +1,6 @@
+body {
+  overflow-y: hidden;
+}
 .gradient-text {
   background: linear-gradient(90deg, #ffebba, #ffc334);
   -webkit-background-clip: text;

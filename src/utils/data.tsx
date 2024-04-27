@@ -699,7 +699,7 @@ export const SettingsSecondaryNavItems: SecondaryBarType[] = [
     tag: "Logo, Site Name",
   },
   {
-    name: "general-settings",
+    name: "general",
     link: "/dashboard/settings/general",
     icon: ImportIcon,
     tag: "Default EULA and more",

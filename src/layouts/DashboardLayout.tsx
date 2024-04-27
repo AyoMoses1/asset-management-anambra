@@ -13,7 +13,7 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children, bg }) => {
   const { onOpen } = useDisclosure();
 
   return (
-    <Flex h={"100vh"} w={"full"} overflowX={"hidden"} overflowY={"hidden"}>
+    <Flex h={"100vh"} w={"full"}>
       <SideNavigation />
       <Stack
         flex={1}
@@ -21,14 +21,13 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({ children, bg }) => {
         w={"full"}
         height={"full"}
         pos={"relative"}
-        sx={{ overflowX: "hidden" }}
       >
         <DashboardHeader onOpen={onOpen} />
         <Box
           flex={1}
           h={`calc(100vh-93px)`}
           w={"full"}
-          sx={{ overflowX: "hidden", overflowY: "hidden" }}
+          sx={{ overflowX: "hidden", overflowY: "scroll" }}
         >
           <Container maxW={"container.xl"} py={"30px"} w={"full"}>
             {children}
