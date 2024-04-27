@@ -17,7 +17,7 @@ interface SidebarProps {
 const Sidebar: React.FC<SidebarProps> = ({ handleState }) => {
   const { secondaryLinks } = useNavigation();
   return (
-    <VStack height={"90vh"} overflowY={"scroll"} pr={"10px"}>
+    <VStack height={"90vh"} overflowY={"hidden"} pr={"10px"}>
       <InputGroup>
         <Input placeholder="Search for a setting" />
         <InputRightElement bg={MAIN_BLACK}>

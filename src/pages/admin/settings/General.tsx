@@ -29,15 +29,9 @@ const General = () => {
       borderColor={BORDER_LIGHT}
       borderRadius={"8px"}
     >
-      <HStack justifyContent={"space-between"} mb={"24px"}>
-        <Heading variant={"h5Small"} textTransform={"uppercase"}>
-          Asset Tag
-        </Heading>
-
-        <Heading variant={"h5Small"} textTransform={"uppercase"}>
-          1/2
-        </Heading>
-      </HStack>
+      <Heading variant={"h5Small"} textTransform={"uppercase"}>
+        General Settings
+      </Heading>
       {createAssetInputs().map((input, idx) => (
         <Flex gap={"6px"}>
           <AuthInput

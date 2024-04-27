@@ -31,7 +31,7 @@ const Index = () => {
         <Stack>
           <Sidebar handleState={handleState} />
         </Stack>
-        <Stack width={"100%"}>{settings[state]?.component}</Stack>
+        <Stack width={"100%"}>{settings[state].component}</Stack>
       </HStack>
     </DashboardLayout>
   );
