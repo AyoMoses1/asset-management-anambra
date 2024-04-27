@@ -9,8 +9,10 @@ import {
 import gov from "assets/Charles-Soludo.png";
 import img from "assets/Frame 2258.svg";
 import bgImg from "assets/download.svg";
+import { useNavigate } from "react-router-dom";
 
 const SoludoSection = () => {
+  const navigate = useNavigate();
   return (
     <Box bg={"main.yellow"} px={"150px"} py={"170px"}>
       <SimpleGrid
@@ -50,6 +52,7 @@ const SoludoSection = () => {
             width={"167px"}
             color={"#121619"}
             fontWeight={600}
+            onClick={() => navigate("/login")}
           >
             Sign up
           </Button>

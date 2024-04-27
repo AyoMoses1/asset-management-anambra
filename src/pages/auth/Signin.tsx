@@ -8,7 +8,7 @@ import {
   Link,
 } from "@chakra-ui/react";
 import AuthInput from "components/common/AuthInput";
-import { Link as ReactLink } from "react-router-dom";
+import { Link as ReactLink, useNavigate } from "react-router-dom";
 import AuthLayout from "layouts/AuthLayout";
 import { useForm } from "react-hook-form";
 import { loginInputs } from "utils/data";
@@ -19,6 +19,8 @@ const Signin = () => {
   const { control } = useForm({
     mode: "onSubmit",
   });
+
+  const navigate = useNavigate();
 
   return (
     <AuthLayout>
@@ -56,7 +58,11 @@ const Signin = () => {
           />
         ))}
         <Checkbox>Remember me</Checkbox>
-        <Button w={"full"} fontWeight={700}>
+        <Button
+          w={"full"}
+          fontWeight={700}
+          onClick={() => navigate("/dashboard")}
+        >
           Login
         </Button>
         <Link
