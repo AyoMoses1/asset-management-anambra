@@ -1,5 +1,9 @@
 // DECODE
 /* eslint-disable @typescript-eslint/no-explicit-any */
+const SHOW_LOGS = true;
+
+export const log = (...args: any[]) => SHOW_LOGS && console.log(...args);
+
 export const decodeSlug = (name: string) => {
   if (!name) return "";
   const words = name.split("-");

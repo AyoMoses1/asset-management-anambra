@@ -2,9 +2,10 @@
 
 type ResponseDataType = {
   status: "success" | "error";
+  isSuccess: boolean;
   message: string;
   data?: any;
-  code?: number;
+  headers?: any;
 };
 
 type DashboardCard = {

@@ -6,6 +6,7 @@ import {
   Image,
   Checkbox,
   Link,
+  useDisclosure,
 } from "@chakra-ui/react";
 import AuthInput from "components/common/AuthInput";
 import { Link as ReactLink, useNavigate } from "react-router-dom";
@@ -14,13 +15,53 @@ import { useForm } from "react-hook-form";
 import { loginInputs } from "utils/data";
 import logo from "assets/logo3.png";
 import ROUTES from "utils/routeNames";
+import useNotification from "hooks/useNotification";
+import { useAppDispatch } from "store/hooks";
+import { executeLogin } from "apis/auth";
+import { populateAccount, populateToken } from "store/slice/accountSlice";
 
 const Signin = () => {
-  const { control } = useForm({
+  const { control, getValues, trigger } = useForm({
     mode: "onSubmit",
   });
 
+  const {
+    isOpen: isLoading,
+    onOpen: openLoading,
+    onClose: closeLoading,
+  } = useDisclosure();
+
   const navigate = useNavigate();
+  const toast = useNotification()
+  const dispatch = useAppDispatch()
+
+  const handleLogin = async () => {
+    try {
+      if (!(await trigger())) return;
+      openLoading();
+      const payload: LoginData = {
+        username: getValues("email").trim(),
+        password: getValues("password").trim(),
+      };
+      const result = await executeLogin(payload);
+      if (result.isSuccess === false) throw new Error(result.message);
+      toast({
+        status: "success",
+        title: result.message,
+      });
+      dispatch(populateToken(result.data.token));
+      dispatch(populateAccount(result.data.account));
+      navigate("/dashboard");
+    } catch (error: any) {
+      console.log("ERROR:", error.message);
+      toast({
+        status: "error",
+        title: error.message,
+      });
+    } finally {
+      closeLoading();
+    }
+  };
 
   return (
     <AuthLayout>
@@ -61,7 +102,8 @@ const Signin = () => {
         <Button
           w={"full"}
           fontWeight={700}
-          onClick={() => navigate("/dashboard")}
+          onClick={handleLogin}
+          isLoading={isLoading}
         >
           Login
         </Button>
